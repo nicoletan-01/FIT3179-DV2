@@ -1,7 +1,6 @@
 const CHARTS = [
   { id: "#vis01", spec: "specs/01_map_choropleth_gvap.vg.json" },
   { id: "#vis02", spec: "specs/02_map_proportional_commodities.vg.json" },
-  { id: "#vis03", spec: "specs/03_map_global_tfp.vg.json" },
   { id: "#vis04", spec: "specs/04_dumbbell_sector_input_output.vg.json" },
   { id: "#vis05", spec: "specs/05_streamgraph_commodity_value.vg.json" },
   { id: "#vis06", spec: "specs/06_bump_commodity_ranks.vg.json" },

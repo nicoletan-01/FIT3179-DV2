@@ -5,8 +5,6 @@ const CHARTS = [
   { id: "#vis05", spec: "specs/05_streamgraph_commodity_value.vg.json" },
   { id: "#vis06", spec: "specs/06_bump_commodity_ranks.vg.json" },
   { id: "#vis07", spec: "specs/07_multiline_climate_tfp.vg.json" },
-  { id: "#vis08", spec: "specs/08_heatmap_climate_matrix.vg.json" },
-  { id: "#vis09", spec: "specs/09_lollipop_rd_investment.vg.json" },
   { id: "#vis10", spec: "specs/10_slope_farm_consolidation.vg.json" },
   { id: "#vis11", spec: "specs/11_butterfly_farm_scale.vg.json" }
 ];

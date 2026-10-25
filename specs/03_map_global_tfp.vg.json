@@ -1,106 +1,147 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "description": "Dot density map of Australian agricultural production. Each dot = $200 million of annual gross output (2024-25), placed within its production region. Click the legend to isolate one farming sector.",
-  "width": 650,
-  "height": 380,
+  "width": 680,
+  "height": 360,
   "projection": {
-    "type": "conicEqualArea",
-    "parallels": [
-      -18,
-      -36
-    ],
-    "rotate": [
-      -133,
-      0,
-      0
-    ]
+    "type": "equalEarth"
   },
   "layer": [
     {
       "data": {
-        "url": "data/au_states.geojson",
-        "format": {
-          "type": "json",
-          "property": "features"
-        }
+        "sphere": true
       },
       "mark": {
         "type": "geoshape",
-        "fill": "#E6E0D0",
-        "stroke": "#FBF8F3",
-        "strokeWidth": 1.4
+        "fill": "#F4EFE4"
       }
     },
     {
       "data": {
-        "url": "data/aus_ag_dot_density.csv"
-      },
-      "params": [
-        {
-          "name": "pick",
-          "select": {
-            "type": "point",
-            "fields": [
-              "sector"
-            ]
-          },
-          "bind": "legend"
+        "graticule": {
+          "step": [
+            30,
+            30
+          ]
         }
-      ],
+      },
+      "mark": {
+        "type": "geoshape",
+        "stroke": "#E2DAC6",
+        "strokeWidth": 0.5
+      }
+    },
+    {
+      "data": {
+        "url": "data/world_110m.json",
+        "format": {
+          "type": "topojson",
+          "feature": "countries"
+        }
+      },
+      "mark": {
+        "type": "geoshape",
+        "fill": "#E4DEC9",
+        "stroke": "#FBF8F3",
+        "strokeWidth": 0.6
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {"Region": "WA Wheatbelt", "Country": "Australia", "Lon": 117.5, "Lat": -31.2, "TFP_Index_2024": 178.4, "Annual_TFP_Growth_Pct": 1.92, "OECD_Producer_Support_Pct": 2.4},
+          {"Region": "Riverina & Murray Basin", "Country": "Australia", "Lon": 145.5, "Lat": -35.1, "TFP_Index_2024": 166.8, "Annual_TFP_Growth_Pct": 1.65, "OECD_Producer_Support_Pct": 2.4},
+          {"Region": "Darling Downs & Fitzroy", "Country": "Australia", "Lon": 150.2, "Lat": -26.8, "TFP_Index_2024": 162.5, "Annual_TFP_Growth_Pct": 1.54, "OECD_Producer_Support_Pct": 2.4},
+          {"Region": "Wimmera-Mallee Grain Belt", "Country": "Australia", "Lon": 142.2, "Lat": -36.4, "TFP_Index_2024": 168.1, "Annual_TFP_Growth_Pct": 1.71, "OECD_Producer_Support_Pct": 2.4},
+          {"Region": "Eyre & Yorke Peninsulas", "Country": "Australia", "Lon": 136.8, "Lat": -33.9, "TFP_Index_2024": 164.2, "Annual_TFP_Growth_Pct": 1.58, "OECD_Producer_Support_Pct": 2.4},
+          {"Region": "Canterbury & Waikato", "Country": "New Zealand", "Lon": 172.5, "Lat": -42.5, "TFP_Index_2024": 158.0, "Annual_TFP_Growth_Pct": 1.36, "OECD_Producer_Support_Pct": 0.8},
+          {"Region": "Midwest Corn Belt (Iowa/Illinois)", "Country": "United States", "Lon": -91.5, "Lat": 41.5, "TFP_Index_2024": 161.2, "Annual_TFP_Growth_Pct": 1.42, "OECD_Producer_Support_Pct": 8.9},
+          {"Region": "Central Valley", "Country": "United States", "Lon": -120.4, "Lat": 36.8, "TFP_Index_2024": 156.8, "Annual_TFP_Growth_Pct": 1.34, "OECD_Producer_Support_Pct": 8.9},
+          {"Region": "Great Plains Wheat Belt", "Country": "United States", "Lon": -99.8, "Lat": 38.2, "TFP_Index_2024": 152.4, "Annual_TFP_Growth_Pct": 1.25, "OECD_Producer_Support_Pct": 8.9},
+          {"Region": "Saskatchewan & Alberta Prairies", "Country": "Canada", "Lon": -107.5, "Lat": 51.8, "TFP_Index_2024": 159.4, "Annual_TFP_Growth_Pct": 1.39, "OECD_Producer_Support_Pct": 8.2},
+          {"Region": "Sinaloa & Bajio Valley", "Country": "Mexico", "Lon": -102.5, "Lat": 22.8, "TFP_Index_2024": 165.0, "Annual_TFP_Growth_Pct": 1.48, "OECD_Producer_Support_Pct": 9.4},
+          {"Region": "Mato Grosso Soy & Corn Belt", "Country": "Brazil", "Lon": -55.8, "Lat": -13.2, "TFP_Index_2024": 212.5, "Annual_TFP_Growth_Pct": 2.24, "OECD_Producer_Support_Pct": 3.1},
+          {"Region": "Parana & Rio Grande do Sul", "Country": "Brazil", "Lon": -52.2, "Lat": -26.5, "TFP_Index_2024": 198.4, "Annual_TFP_Growth_Pct": 2.05, "OECD_Producer_Support_Pct": 3.1},
+          {"Region": "Pampas Grain & Cattle Belt", "Country": "Argentina", "Lon": -61.5, "Lat": -34.2, "TFP_Index_2024": 176.2, "Annual_TFP_Growth_Pct": 1.68, "OECD_Producer_Support_Pct": -12.5},
+          {"Region": "Central Valley Fruit Zone", "Country": "Chile", "Lon": -71.2, "Lat": -34.8, "TFP_Index_2024": 169.5, "Annual_TFP_Growth_Pct": 1.56, "OECD_Producer_Support_Pct": 2.6},
+          {"Region": "Beauce & Paris Basin", "Country": "France (EU)", "Lon": 1.8, "Lat": 47.8, "TFP_Index_2024": 136.4, "Annual_TFP_Growth_Pct": 0.92, "OECD_Producer_Support_Pct": 17.8},
+          {"Region": "North German Plain", "Country": "Germany (EU)", "Lon": 10.5, "Lat": 52.2, "TFP_Index_2024": 139.2, "Annual_TFP_Growth_Pct": 0.98, "OECD_Producer_Support_Pct": 17.8},
+          {"Region": "Andalusia & Castile", "Country": "Spain (EU)", "Lon": -4.2, "Lat": 38.5, "TFP_Index_2024": 144.6, "Annual_TFP_Growth_Pct": 1.09, "OECD_Producer_Support_Pct": 17.8},
+          {"Region": "Po Valley", "Country": "Italy (EU)", "Lon": 11.2, "Lat": 45.0, "TFP_Index_2024": 132.8, "Annual_TFP_Growth_Pct": 0.84, "OECD_Producer_Support_Pct": 17.8},
+          {"Region": "East Anglia", "Country": "United Kingdom", "Lon": 0.4, "Lat": 52.4, "TFP_Index_2024": 131.5, "Annual_TFP_Growth_Pct": 0.81, "OECD_Producer_Support_Pct": 19.2},
+          {"Region": "Black Earth (Chernozem) Belt", "Country": "Ukraine / E. Europe", "Lon": 32.5, "Lat": 49.0, "TFP_Index_2024": 162.0, "Annual_TFP_Growth_Pct": 1.44, "OECD_Producer_Support_Pct": 4.5},
+          {"Region": "Kuban & Southern Steppe", "Country": "Russia", "Lon": 41.5, "Lat": 46.5, "TFP_Index_2024": 154.2, "Annual_TFP_Growth_Pct": 1.28, "OECD_Producer_Support_Pct": 10.4},
+          {"Region": "North China Plain", "Country": "China", "Lon": 116.2, "Lat": 35.5, "TFP_Index_2024": 216.8, "Annual_TFP_Growth_Pct": 2.31, "OECD_Producer_Support_Pct": 15.2},
+          {"Region": "Manchurian Soy & Corn Plain", "Country": "China", "Lon": 126.5, "Lat": 45.2, "TFP_Index_2024": 208.4, "Annual_TFP_Growth_Pct": 2.18, "OECD_Producer_Support_Pct": 15.2},
+          {"Region": "Indo-Gangetic Plain (Punjab)", "Country": "India", "Lon": 76.5, "Lat": 29.8, "TFP_Index_2024": 174.5, "Annual_TFP_Growth_Pct": 1.65, "OECD_Producer_Support_Pct": -6.4},
+          {"Region": "Deccan Plateau", "Country": "India", "Lon": 77.8, "Lat": 18.2, "TFP_Index_2024": 168.0, "Annual_TFP_Growth_Pct": 1.53, "OECD_Producer_Support_Pct": -6.4},
+          {"Region": "Hokkaido & Kanto", "Country": "Japan", "Lon": 140.5, "Lat": 38.5, "TFP_Index_2024": 121.4, "Annual_TFP_Growth_Pct": 0.57, "OECD_Producer_Support_Pct": 37.6},
+          {"Region": "Jeolla & Chungcheong", "Country": "South Korea", "Lon": 127.2, "Lat": 36.2, "TFP_Index_2024": 124.8, "Annual_TFP_Growth_Pct": 0.65, "OECD_Producer_Support_Pct": 44.2},
+          {"Region": "Mekong & Red River Deltas", "Country": "Vietnam", "Lon": 106.2, "Lat": 11.5, "TFP_Index_2024": 185.2, "Annual_TFP_Growth_Pct": 1.83, "OECD_Producer_Support_Pct": 4.2},
+          {"Region": "Java & Sumatra Estates", "Country": "Indonesia", "Lon": 105.5, "Lat": -4.5, "TFP_Index_2024": 172.0, "Annual_TFP_Growth_Pct": 1.61, "OECD_Producer_Support_Pct": 16.8},
+          {"Region": "Free State & Western Cape", "Country": "South Africa", "Lon": 25.5, "Lat": -29.5, "TFP_Index_2024": 159.0, "Annual_TFP_Growth_Pct": 1.38, "OECD_Producer_Support_Pct": 3.2},
+          {"Region": "Nile Delta & Valley", "Country": "Egypt", "Lon": 31.0, "Lat": 29.8, "TFP_Index_2024": 156.4, "Annual_TFP_Growth_Pct": 1.32, "OECD_Producer_Support_Pct": 5.8},
+          {"Region": "Anatolian Plateau", "Country": "Turkey", "Lon": 33.5, "Lat": 39.2, "TFP_Index_2024": 148.5, "Annual_TFP_Growth_Pct": 1.17, "OECD_Producer_Support_Pct": 21.4}
+        ]
+      },
       "mark": {
         "type": "circle",
-        "size": 18
+        "size": 115,
+        "opacity": 0.95,
+        "stroke": "#FFFFFF",
+        "strokeWidth": 1.2
       },
       "encoding": {
         "longitude": {
-          "field": "lon",
+          "field": "Lon",
           "type": "quantitative"
         },
         "latitude": {
-          "field": "lat",
+          "field": "Lat",
           "type": "quantitative"
         },
         "color": {
-          "field": "sector",
-          "type": "nominal",
+          "field": "TFP_Index_2024",
+          "type": "quantitative",
           "scale": {
+            "scheme": "viridis",
             "domain": [
-              "Broadacre Cropping",
-              "Beef & Sheep Livestock",
-              "Horticulture & Cotton",
-              "Dairy"
-            ],
-            "range": [
-              "#1E4D3B",
-              "#C85A32",
-              "#D98A2B",
-              "#3B6E8C"
+              115,
+              220
             ]
           },
           "legend": {
-            "title": "1 dot = $200 million",
-            "orient": "top-left",
-            "symbolSize": 110,
-            "labelFontSize": 11.5
+            "title": "TFP Index (1990=100)",
+            "orient": "bottom"
           }
-        },
-        "opacity": {
-          "condition": {
-            "param": "pick",
-            "value": 0.88
-          },
-          "value": 0.06
         },
         "tooltip": [
           {
-            "field": "region",
+            "field": "Region",
             "type": "nominal",
-            "title": "Production Region"
+            "title": "Agricultural Zone"
           },
           {
-            "field": "sector",
+            "field": "Country",
             "type": "nominal",
-            "title": "Farming Sector ($200M/dot)"
+            "title": "Country / Economy"
+          },
+          {
+            "field": "TFP_Index_2024",
+            "type": "quantitative",
+            "title": "2024 TFP Index (1990=100)",
+            "format": ".1f"
+          },
+          {
+            "field": "Annual_TFP_Growth_Pct",
+            "type": "quantitative",
+            "title": "Annual TFP Growth (%)",
+            "format": ".2f"
+          },
+          {
+            "field": "OECD_Producer_Support_Pct",
+            "type": "quantitative",
+            "title": "OECD Producer Subsidy (% Receipts)",
+            "format": ".1f"
           }
         ]
       }
@@ -109,34 +150,30 @@
       "data": {
         "values": [
           {
-            "lon": 125.5,
-            "lat": -24.2,
-            "t": "Arid interior (<250mm rain) has no cropping,"
-          },
-          {
-            "lon": 125.5,
-            "lat": -25.8,
-            "t": "supporting only low-density cattle stations"
+            "Lon": 134,
+            "Lat": -25,
+            "Label": "Australia: 164.2 TFP Index with only 2.4% OECD subsidy"
           }
         ]
       },
       "mark": {
         "type": "text",
-        "fontSize": 11,
-        "fontStyle": "italic",
-        "fill": "#5A635D"
+        "dy": 42,
+        "fontSize": 11.5,
+        "fontWeight": "bold",
+        "fill": "#C85A32"
       },
       "encoding": {
         "longitude": {
-          "field": "lon",
+          "field": "Lon",
           "type": "quantitative"
         },
         "latitude": {
-          "field": "lat",
+          "field": "Lat",
           "type": "quantitative"
         },
         "text": {
-          "field": "t",
+          "field": "Label",
           "type": "nominal"
         }
       }
@@ -149,10 +186,19 @@
       "type": "fit",
       "contains": "padding"
     },
+    "axis": {
+      "labelFontSize": 11.5,
+      "titleFontSize": 12,
+      "titleFontWeight": 600,
+      "titleColor": "#232725",
+      "labelColor": "#454D48",
+      "gridColor": "#EAE3D2",
+      "domainColor": "#C7BFA8"
+    },
     "legend": {
       "labelFontSize": 11.5,
       "titleFontSize": 12,
-      "titleFontWeight": 700,
+      "titleFontWeight": 600,
       "titleColor": "#1E4D3B"
     },
     "view": {

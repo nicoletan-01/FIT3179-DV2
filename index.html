@@ -42,7 +42,7 @@
       </div>
     </header>
 
-    <!-- BALANCED 2-COLUMN PLAIN ENGLISH GLOSSARY (OPTIMAL 65ch LINE LENGTH) -->
+    <!-- BALANCED 2-COLUMN PLAIN ENGLISH GLOSSARY -->
     <div class="grid-2col">
       <div class="callout-card">
         <h3>What is Total Factor Productivity (TFP)?</h3>
@@ -53,12 +53,12 @@
       <div class="callout-card">
         <h3>Key Farming Terms Explained</h3>
         <p style="margin:0;">
-          <strong>Broadacre farming</strong> refers to large-scale commercial cropping (wheat, barley, canola) and extensive livestock grazing (beef cattle and sheep). <strong>GVAP</strong> measures the Gross Value of Agricultural Production at wholesale market prices ($B AUD), while the <strong>Murray-Darling Basin (MDB)</strong> spans NSW, VIC, QLD, and SA as Australia's primary irrigated food bowl.
+          <strong>Broadacre farming</strong> refers to large-scale commercial cropping (wheat, barley, canola) and extensive livestock grazing (beef cattle and sheep). <strong>GVAP</strong> measures the Gross Value of Agricultural Production at wholesale market prices ($B AUD), while <strong>Land Use Density</strong> maps the physical spatial footprint of farming enterprises across Australia's 7.7M km² continent.
         </p>
       </div>
     </div>
 
-    <!-- SECTION 1: GEOGRAPHY & GLOBAL CONTEXT (3 MAP IDIOMS) -->
+    <!-- SECTION 1: GEOGRAPHY & GLOBAL CONTEXT (3 DISTINCT MAP IDIOMS) -->
     <section class="story-section" id="section-1">
       <div class="section-header">
         <div>
@@ -70,18 +70,20 @@
         Australia's agricultural value is concentrated along fertile inland river basins, coastal valleys, and winter-rainfall grain belts, operating at world-leading efficiency across distinct agro-ecological zones.
       </p>
 
+      <!-- TOP ROW MAPS: MAP 1 (DOT MAP) & MAP 2 (PROPORTIONAL SYMBOL MAP) -->
       <div class="grid-2col">
         <div class="card">
           <div class="chart-header">
-            <span class="idiom-pill">Map Idiom #1 &bull; Choropleth Map</span>
-            <h3 class="chart-title">1. Regional Value &amp; Efficiency: Australian State Agricultural Output</h3>
-            <p class="chart-subtitle">Interactive Choropleth: Switch metric below to instantly re-colour Australian states by economic value, productivity growth, or efficiency</p>
+            <span class="idiom-pill">Map Idiom #1 &bull; Dot Density Map</span>
+            <h3 class="chart-title">1. Land Use Footprint: Spatial Distribution Across Australia</h3>
+            <p class="chart-subtitle">One dot for every 26 km of land, coloured by primary agricultural and environmental land use (2020–21)</p>
           </div>
           <div id="vis01" class="vis-container"></div>
           <div class="chart-caption">
-            <strong>Spatial Takeaway:</strong> New South Wales ($23.4B), Queensland ($22.9B), and Victoria ($21.8B) lead total production value, but Western Australia achieves the fastest productivity growth (+1.92% p.a.) due to export-focused grain scale.
+            <strong>Dot Density Takeaway:</strong> High-density cropping clusters in high-productivity southern rainfall belts, while extensive pastoral grazing spans northern and inland rangelands. Source: ABARES Catchment Scale Land Use (2020–21).
           </div>
         </div>
+
         <div class="card">
           <div class="chart-header">
             <span class="idiom-pill">Map Idiom #2 &bull; Proportional Symbol Map</span>
@@ -95,28 +97,30 @@
         </div>
       </div>
 
+      <!-- BOTTOM ROW NARRATIVE + MAP 3 (SPATIAL BIN MAP) -->
       <div class="grid-narrative-chart">
         <div class="callout-card">
-          <h3>Grains Inland, Dairy &amp; Horticulture Near Water</h3>
+          <h3>Cropping Inland, Grazing Across Pastures, Minimal Use in the Arid Center</h3>
           <p>
-            Mapping <strong>ABS Value of Agricultural Commodities Produced (2024–25)</strong> at a resolution of <strong>1 dot = $200 million</strong> reveals how rainfall and irrigation shape Australia's agricultural landscape.
+            Mapping <strong>ABARES/ABS Land Use Data (2020–21)</strong> at a resolution of <strong>1 dot = 26 km of land</strong> reveals how climate, rainfall, and soil quality dictate Australia's spatial agricultural footprint.
           </p>
           <p>
-            <strong>Broadacre cropping</strong> forms two sweeping inland crescents across the southern winter-rainfall belt (the WA Wheatbelt, SA Peninsulas, Wimmera-Mallee, Riverina, and Darling Downs).
+            <strong>Broadacre cropping and horticulture</strong> form dense crescent belts across the southern winter-rainfall zones (WA Wheatbelt, Eyre Peninsula, Wimmera-Mallee, Riverina) and fertile river valleys.
           </p>
           <p style="margin-bottom:0;">
-            By contrast, high-intensity <strong>dairy</strong> clusters along cool, high-rainfall southern coasts (Gippsland, Western District, Northern Tasmania), while <strong>horticulture and cotton</strong> hug irrigated river valleys along the Murray-Darling and Queensland coast.
+            <strong>Grazing</strong> dominates the semi-arid interior and savanna rangelands, representing Australia's largest land mass footprint. By contrast, <strong>Conservation and minimal use</strong> spans the hyper-arid central desert basin.
           </p>
         </div>
+
         <div class="card">
           <div class="chart-header">
-            <span class="idiom-pill">Map Idiom #3 &bull; Dot Density Map</span>
-            <h3 class="chart-title">3. Grains in the Crescents, Dairy on the Coasts: Production Density across Australia</h3>
-            <p class="chart-subtitle">Each dot = $200 million of annual production (2024–25). Click a legend item to isolate one farming sector</p>
+            <span class="idiom-pill">Map Idiom #3 &bull; Equal-Earth Spatial Bin Map</span>
+            <h3 class="chart-title">3. High Efficiency, Low Subsidies: Global Agricultural TFP &amp; Subsidy Map</h3>
+            <p class="chart-subtitle">Spatial Bin Map: Equal-area grid cells visualize 2023 USDA TFP Index (2015=100); hover inspects OECD subsidy reliance (%)</p>
           </div>
           <div id="vis03" class="vis-container"></div>
           <div class="chart-caption">
-            <strong>Dot Density Takeaway:</strong> Dots are placed within their ABS/ABARES production regions to show spatial density rather than individual farm addresses. Source: ABS &amp; ABARES, Value of Agricultural Commodities Produced (2024–25).
+            <strong>Global Tessellation Takeaway:</strong> Spatial binning eliminates country polygon size bias, illustrating that Australia achieves world-leading productivity (117.54) while maintaining the lowest subsidy reliance in the OECD (2.4%).
           </div>
         </div>
       </div>

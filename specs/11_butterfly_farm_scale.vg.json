@@ -3,11 +3,11 @@
   "data": {
     "url": "data/abares_farm_scale_butterfly.csv"
   },
-  "spacing": 8,
+  "spacing": 4,
   "bounds": "flush",
   "hconcat": [
     {
-      "width": 165,
+      "width": 170,
       "height": 265,
       "layer": [
         {
@@ -27,7 +27,14 @@
                 "field": "Sort_Order",
                 "order": "ascending"
               },
-              "axis": null
+              "axis": {
+                "title": null,
+                "labelFontWeight": 600,
+                "labelFontSize": 11,
+                "labelColor": "#232725",
+                "labelPadding": 8,
+                "labelLimit": 155
+              }
             },
             "x": {
               "field": "Cost_To_Output_Ratio_Pct",
@@ -36,7 +43,7 @@
               "scale": {
                 "domain": [
                   0,
-                  115
+                  125
                 ]
               },
               "axis": {
@@ -65,7 +72,7 @@
             "dx": -5,
             "fontSize": 10.5,
             "fontWeight": "bold",
-            "fill": "#FFFFFF"
+            "fill": "#C85A32"
           },
           "encoding": {
             "y": {
@@ -84,14 +91,14 @@
             "text": {
               "field": "Cost_To_Output_Ratio_Pct",
               "type": "quantitative",
-              "format": ".0f"
+              "format": ".1f"
             }
           }
         }
       ]
     },
     {
-      "width": 185,
+      "width": 170,
       "height": 265,
       "layer": [
         {
@@ -111,12 +118,7 @@
                 "field": "Sort_Order",
                 "order": "ascending"
               },
-              "axis": {
-                "title": null,
-                "labelFontWeight": 600,
-                "labelFontSize": 10.5,
-                "labelLimit": 130
-              }
+              "axis": null
             },
             "x": {
               "field": "Rate_Of_Return_Pct",

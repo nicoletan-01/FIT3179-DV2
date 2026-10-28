@@ -1,36 +1,28 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 680,
-  "height": 360,
+  "width": "container",
+  "height": 440,
+  "background": "transparent",
   "projection": {
     "type": "equalEarth"
   },
   "layer": [
     {
-      "data": {
-        "sphere": true
-      },
-      "mark": {
-        "type": "geoshape",
-        "fill": "#F4EFE4"
-      }
-    },
-    {
+      "name": "world_graticule",
       "data": {
         "graticule": {
-          "step": [
-            30,
-            30
-          ]
+          "step": [30, 30]
         }
       },
       "mark": {
         "type": "geoshape",
-        "stroke": "#E2DAC6",
-        "strokeWidth": 0.5
+        "stroke": "#EAE3D2",
+        "strokeWidth": 0.5,
+        "fill": null
       }
     },
     {
+      "name": "world_base_land",
       "data": {
         "url": "data/world_110m.json",
         "format": {
@@ -40,12 +32,13 @@
       },
       "mark": {
         "type": "geoshape",
-        "fill": "#E4DEC9",
-        "stroke": "#FBF8F3",
+        "fill": "#E5DFD0",
+        "stroke": "#FFFFFF",
         "strokeWidth": 0.5
       }
     },
     {
+      "name": "tfp_choropleth",
       "data": {
         "url": "data/world_110m.json",
         "format": {
@@ -69,7 +62,8 @@
               "Country",
               "TFP_Index_2024",
               "Annual_TFP_Growth_Pct",
-              "OECD_Producer_Support_Pct"
+              "OECD_Producer_Support_Pct",
+              "Highlight"
             ]
           }
         },
@@ -80,7 +74,8 @@
       "mark": {
         "type": "geoshape",
         "stroke": "#FFFFFF",
-        "strokeWidth": 0.9
+        "strokeWidth": 0.6,
+        "cursor": "pointer"
       },
       "encoding": {
         "color": {
@@ -88,16 +83,16 @@
           "type": "quantitative",
           "scale": {
             "scheme": "ylgn",
-            "domain": [
-              115,
-              220
-            ]
+            "domain": [115, 220]
           },
           "legend": {
-            "title": "TFP Index (1990=100)",
-            "orient": "bottom",
+            "title": "TFP Index (1990 = 100)",
+            "orient": "bottom-left",
             "direction": "horizontal",
-            "gradientLength": 260
+            "titleFontSize": 11.5,
+            "labelFontSize": 11,
+            "gradientLength": 220,
+            "gradientThickness": 12
           }
         },
         "tooltip": [
@@ -121,44 +116,102 @@
           {
             "field": "OECD_Producer_Support_Pct",
             "type": "quantitative",
-            "title": "OECD Producer Subsidy (% Receipts)",
+            "title": "OECD Producer Support PSE (%)",
             "format": ".1f"
           }
         ]
       }
     },
     {
+      "name": "australia_outline",
+      "data": {
+        "url": "data/world_110m.json",
+        "format": {
+          "type": "topojson",
+          "feature": "countries"
+        }
+      },
+      "transform": [
+        {
+          "calculate": "toNumber(datum.id)",
+          "as": "id_num"
+        },
+        {
+          "filter": "datum.id_num == 36"
+        }
+      ],
+      "mark": {
+        "type": "geoshape",
+        "fill": null,
+        "stroke": "#1E4D3B",
+        "strokeWidth": 1.8
+      }
+    },
+    {
+      "name": "australia_callout_halo",
       "data": {
         "values": [
           {
-            "Lon": 130,
-            "Lat": -25,
-            "Label": "Australia: 164.2 TFP Index with only 2.4% OECD subsidy"
+            "lon": 133.5,
+            "lat": -25.5,
+            "label": "Australia (TFP 164.2 | PSE 2.4%)"
           }
         ]
       },
       "mark": {
         "type": "text",
-        "dy": 68,
-        "fontSize": 11.5,
-        "fontWeight": "bold",
-        "fill": "#C85A32",
+        "dy": 38,
+        "fontSize": 11,
+        "fontWeight": 700,
         "stroke": "#FFFFFF",
-        "strokeWidth": 2.5,
+        "strokeWidth": 3.5,
         "strokeJoin": "round",
-        "paintOrder": "stroke"
+        "fill": "#FFFFFF"
       },
       "encoding": {
         "longitude": {
-          "field": "Lon",
+          "field": "lon",
           "type": "quantitative"
         },
         "latitude": {
-          "field": "Lat",
+          "field": "lat",
           "type": "quantitative"
         },
         "text": {
-          "field": "Label",
+          "field": "label",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "name": "australia_callout_text",
+      "data": {
+        "values": [
+          {
+            "lon": 133.5,
+            "lat": -25.5,
+            "label": "Australia (TFP 164.2 | PSE 2.4%)"
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "dy": 38,
+        "fontSize": 11,
+        "fontWeight": 700,
+        "fill": "#1E4D3B"
+      },
+      "encoding": {
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "label",
           "type": "nominal"
         }
       }
@@ -167,25 +220,6 @@
   "config": {
     "background": "transparent",
     "font": "Source Sans 3, sans-serif",
-    "autosize": {
-      "type": "fit",
-      "contains": "padding"
-    },
-    "axis": {
-      "labelFontSize": 11.5,
-      "titleFontSize": 12,
-      "titleFontWeight": 600,
-      "titleColor": "#232725",
-      "labelColor": "#454D48",
-      "gridColor": "#EAE3D2",
-      "domainColor": "#C7BFA8"
-    },
-    "legend": {
-      "labelFontSize": 11.5,
-      "titleFontSize": 12,
-      "titleFontWeight": 600,
-      "titleColor": "#1E4D3B"
-    },
     "view": {
       "stroke": "transparent"
     }

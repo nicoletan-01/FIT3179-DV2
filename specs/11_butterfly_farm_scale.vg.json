@@ -3,12 +3,23 @@
   "data": {
     "url": "data/abares_farm_scale_butterfly.csv"
   },
-  "spacing": 12,
+  "spacing": 14,
   "bounds": "flush",
   "hconcat": [
     {
       "width": 240,
       "height": 265,
+      "encoding": {
+        "y": {
+          "field": "Farm_Size_Class",
+          "type": "nominal",
+          "sort": {
+            "field": "Sort_Order",
+            "order": "ascending"
+          },
+          "axis": null
+        }
+      },
       "layer": [
         {
           "mark": {
@@ -20,15 +31,6 @@
             }
           },
           "encoding": {
-            "y": {
-              "field": "Farm_Size_Class",
-              "type": "nominal",
-              "sort": {
-                "field": "Sort_Order",
-                "order": "ascending"
-              },
-              "axis": null
-            },
             "x": {
               "field": "Cost_To_Output_Ratio_Pct",
               "type": "quantitative",
@@ -66,14 +68,6 @@
             "fill": "#C85A32"
           },
           "encoding": {
-            "y": {
-              "field": "Farm_Size_Class",
-              "type": "nominal",
-              "sort": {
-                "field": "Sort_Order",
-                "order": "ascending"
-              }
-            },
             "x": {
               "field": "Cost_To_Output_Ratio_Pct",
               "type": "quantitative",
@@ -91,6 +85,29 @@
     {
       "width": 55,
       "height": 265,
+      "encoding": {
+        "y": {
+          "field": "Farm_Size_Class",
+          "type": "nominal",
+          "sort": {
+            "field": "Sort_Order",
+            "order": "ascending"
+          },
+          "axis": {
+            "title": "Farm Size Tier",
+            "titleFontWeight": 600,
+            "titleFontSize": 11.5,
+            "titleColor": "#1E4D3B",
+            "titlePadding": 10,
+            "labelFontWeight": 600,
+            "labelFontSize": 11,
+            "labelColor": "#232725",
+            "labelLimit": 180,
+            "ticks": false,
+            "domain": false
+          }
+        }
+      },
       "layer": [
         {
           "mark": {
@@ -102,22 +119,6 @@
             }
           },
           "encoding": {
-            "y": {
-              "field": "Farm_Size_Class",
-              "type": "nominal",
-              "sort": {
-                "field": "Sort_Order",
-                "order": "ascending"
-              },
-              "axis": {
-                "title": null,
-                "labelFontWeight": 600,
-                "labelFontSize": 11,
-                "labelLimit": 160,
-                "ticks": false,
-                "domain": false
-              }
-            },
             "x": {
               "field": "Rate_Of_Return_Pct",
               "type": "quantitative",
@@ -161,14 +162,6 @@
             "fill": "#1E4D3B"
           },
           "encoding": {
-            "y": {
-              "field": "Farm_Size_Class",
-              "type": "nominal",
-              "sort": {
-                "field": "Sort_Order",
-                "order": "ascending"
-              }
-            },
             "x": {
               "field": "Rate_Of_Return_Pct",
               "type": "quantitative"

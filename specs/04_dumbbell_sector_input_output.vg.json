@@ -177,9 +177,9 @@
       "data": {
         "values": [
           {
-            "X": 100,
+            "X": 110,
             "Sector": "Wool Specialist",
-            "Note": "\u2190 Vertical dashed line = 1990 Baseline Index (100)"
+            "Note": "\u2190 1990 Baseline Index (100)"
           }
         ]
       },

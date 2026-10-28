@@ -57,7 +57,6 @@
     {
       "mark": {
         "type": "circle",
-        "color": "#1E4D3B",
         "opacity": 0.95,
         "stroke": "#FFFFFF",
         "strokeWidth": 1.5
@@ -93,6 +92,24 @@
             "offset": 8
           }
         },
+        "color": {
+          "field": "Benefit_Cost_Ratio",
+          "type": "quantitative",
+          "scale": {
+            "scheme": "viridis",
+            "domain": [
+              3.5,
+              9.5
+            ]
+          },
+          "legend": {
+            "title": "Benefit-Cost (x:1)",
+            "orient": "top",
+            "direction": "horizontal",
+            "titleLimit": 150,
+            "gradientLength": 130
+          }
+        },
         "tooltip": [
           {
             "field": "Industry",
@@ -110,6 +127,12 @@
             "type": "quantitative",
             "title": "R&D Intensity (% of GVP)",
             "format": ".2f"
+          },
+          {
+            "field": "Benefit_Cost_Ratio",
+            "type": "quantitative",
+            "title": "Benefit-Cost Return (x:1)",
+            "format": ".1f"
           },
           {
             "field": "Primary_Driver",
@@ -150,19 +173,23 @@
         "values": [
           {
             "X": 1.55,
-            "Industry": "Wool Production",
-            "Note": "\u2190 National Mean TFP (1.52% p.a.)"
+            "Industry": "Wool Production"
           }
         ]
       },
       "mark": {
         "type": "text",
         "align": "left",
-        "dy": 14,
-        "fontSize": 10.5,
+        "dy": 8,
+        "lineHeight": 12,
+        "fontSize": 10,
         "fontStyle": "italic",
         "fontWeight": "bold",
-        "fill": "#C85A32"
+        "fill": "#C85A32",
+        "text": [
+          "← National Mean TFP",
+          "   (1.52% p.a.)"
+        ]
       },
       "encoding": {
         "x": {
@@ -171,10 +198,6 @@
         },
         "y": {
           "field": "Industry",
-          "type": "nominal"
-        },
-        "text": {
-          "field": "Note",
           "type": "nominal"
         }
       }

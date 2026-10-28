@@ -1,31 +1,48 @@
-# FIT3179 Data Visualisation 2 — Moodle Submission Notes & Sketch Guide
+# FIT3179 Data Visualisation 2
 **Author:** Nicole Tan 
 **Date:** October 2026  
 
 ---
 
-## 1. Domain, Why, and Who (Copy-Paste into Moodle Template)
-* **Domain:** Australian Agricultural Productivity across broadacre cropping, livestock, dairy, and horticulture, evaluated alongside international peers, climate volatility, R&D investment, and structural farm consolidation.
-* **Who (Target Audience):** The general Australian public, students, and policy-curious citizens. Specialised econometric concepts such as *Total Factor Productivity (TFP)* and *OECD Producer Support Estimates (PSE)* are introduced in plain English callouts without requiring prior statistical training.
-* **Why (User Tasks & Story Goal):** Enable readers to understand how Australian agriculture nearly doubled output efficiency since 1980 despite severe droughts and minimal government subsidies—identifying the three core drivers: cropping technology, rural R&D intensity, and farm-scale consolidation.
+## 1. Domain, Why, and Who
+* **Domain:**  Australian agricultural productivity, focusing on productivity growth across farming sectors, regional differences, technological innovation, climate variability and economies of scale.
+* **Who:** The target audience is the general Australian public, particularly people interested in food production, the economy and environmental sustainability. 
+* **Why:** Agriculture is important to Australia's economy, food supply and export industry. However, increased agricultural production does not necessarily mean improved productivity, as it may also result from greater resource use. This visualisation investigates how efficiently Australian farms convert inputs such as land, labour, machinery and fertiliser into agricultural outputs. It aims to explain why productivity growth differs between farming sectors and how innovation, climate conditions, research and development (R&D), and farm size contribute to long-term efficiency improvements.
 
 ## 2. What: The Data Sources
-Combines four authoritative institutional sources (total local data size < 450 KB):
-1. **ABARES:** *Australian Farm Productivity (Broadacre and Dairy Estimates)*, *Productivity Drivers (Climate-Adjusted TFP)*, *Agricultural R&D Investment*, and *Disaggregating Farm Size*.
-2. **Australian Bureau of Statistics (ABS):** *Agricultural Commodities, Australia* and *Value of Agricultural Commodities Produced*.
-3. **USDA Economic Research Service (ERS):** *International Agricultural Productivity* country indices.
-4. **OECD:** *Agricultural Policy Monitoring and Evaluation 2025 (Australia chapter)*.
+1. Department of Foreign Affairs and Trade (DFAT): Agricultural Trade and the WTO — Bilateral export flow matrices, preferential free trade agreement (FTA) tariff regimes, and destination trade shares for Australian agricultural commodities.
 
-## 3. How: Rationale for the 11 Visualisation Idioms (10 Advanced + 1 Annotated Basic)
-1. **Choropleth Map (Advanced Map Idiom #1):** Encodes state-level GVAP ($B) and Annual TFP Growth (%) on an Australian Mercator projection with an interactive metric selector.
-2. **Proportional Symbol Map (Advanced Map Idiom #2):** Overlays scaled circles for 15 major regional commodity hubs across Australia, encoding production value by circle area and sector by colour, with an interactive sector filter.
-3. **Equal-Earth Global Choropleth Map (Advanced Map Idiom #3):** Uses an area-preserving Equal-Earth projection to compare USDA cumulative agricultural TFP growth and OECD subsidy levels globally.
-4. **Connected Dot Plot / Dumbbell Chart (Advanced Idiom #4):** Highlights the net productivity wedge between 2024 Input Volume Index and Output Volume Index across 6 farming sectors.
-5. **Streamgraph (Advanced Idiom #5):** Reveals the 40-year organic expansion and compositional shift of real gross value across 6 major commodity groups.
-6. **Bump Chart (Advanced Idiom #6):** Tracks ordinal ranking shifts every 5 years (1985–2025), clearly illustrating Wool falling from #1 to #6 while Canola/Oilseeds and Horticulture rise.
-7. **Annotated Multi-Line Chart with Drought Shock Bands (Basic Idiom #1):** Contrasts volatile observed TFP against smooth Climate-Adjusted TFP, framed by shaded rectangular bands for the Millennium Drought and 2017–19 Eastern Drought.
-8. **Heatmap Combined with Marginal Bar Chart (Advanced Idiom #7):** Pairs a 2D State × Year moisture/TFP anomaly matrix (`redyellowgreen` diverging scale) with a right-hand marginal bar chart of mean state volatility.
-9. **Lollipop Chart (Advanced Idiom #8):** Encodes annual TFP growth rate on the horizontal stem, R&D intensity (% of GVP) on dot size, and Benefit-Cost Ratio on colour.
-10. **Slope Chart (Advanced Idiom #9):** Contrasts 1990s vs. 2020s national output shares across four farm size tiers, dramatising the jump of the top 10% mega-farms from 44% to 69.5%.
-11. **Butterfly / Diverging Bar Chart (Advanced Idiom #10):** Places Cost-to-Output Ratio (%) on the left wing and Rate of Return (%) on the right wing across six farm turnover classes to demonstrate economies of scale.
-12. **Global Flow Map (Advanced Cartographic Idiom #11):** Encodes radial export flows from Australia to its top 18 international destination markets on an area-preserving Equal Earth Pacific-centred projection (rotation: [-150, 0, 0]). Line stroke width and terminal node area encode export value ( AUD) from official DFAT 2024–25 WTO and ABARES datasets, equipped with interactive region and minimum value filters, demonstrating how Australia's unsubsidised productivity surplus feeds global markets.
+2. ABARES (2025): Australian Farm Productivity: Broadacre and Dairy Estimates — 45-year historical Total Factor Productivity (TFP) series, input/output quantity indexes, and sectoral capital-labor dynamics.
+
+3. ABARES: Productivity Drivers, Climate-Adjusted TFP & Rural R&D Investment — Counterfactual climate-adjusted TFP growth trajectories, historical drought shock impacts, and benefit-cost ratios for rural R&D corporation investments.
+
+4. ABARES: Disaggregating Farm Performance Statistics by Size — Australian Agricultural and Grazing Industries Survey (AAGIS) financial scale tiers, cost-to-output ratios, and capital returns across farm revenue classes.
+
+5. Australian Bureau of Statistics (ABS): Value of Agricultural Commodities Produced (Cat. 7503.0 & 7121.0) — Sub-national Gross Value of Agricultural Production (GVAP), state-level commodity volumes, and production census benchmarks.
+
+6. USDA Economic Research Service & OECD (2025): International Agricultural Productivity & Agricultural Policy Monitoring and Evaluation — Cross-country agricultural TFP growth indices and Producer Support Estimates (PSE) benchmarking Australia's unsubsidised market footing.
+
+## 3. How: Rationale for the Idioms
+1. Choropleth Map: Uses colour to encode state-level Gross Value of Agricultural Production (GVAP, A$ billion) or annual Total Factor Productivity (TFP) growth (%). An interactive metric selector allows users to switch between economic output and productivity efficiency, revealing how the states with the highest production value differ from those with the fastest productivity growth.
+
+2. Proportional Symbol Map: Displays 15 major regional agricultural production hubs using circles whose area represents production value and whose colour identifies the dominant farming sector. An interactive sector filter helps users locate major production centres and compare the geographical distribution of different agricultural industries.
+
+3. Choropleth Map: Uses an equal-area projection to compare cumulative agricultural TFP growth with government subsidy levels across countries. Hover-based tooltips reveal country-level values, helping users understand Australia's productivity performance in an international context and compare its relatively low agricultural support with that of other countries.
+
+4. Connected Dot Plot (Dumbbell Chart): Compares 2024 input and output volume indices across six farming sectors. Contrasting coloured endpoints and a connecting line make the gap between resource use and production immediately visible, helping users identify sectors that produce more output relative to their inputs.
+
+5. Streamgraph: Displays changes in the real gross value of six major commodity groups from 1985 to 2025. The flowing, stacked areas reveal long-term growth and shifts in the composition of agricultural production, allowing users to see how the relative contributions of grains, livestock, horticulture and oilseeds have changed over four decades.
+
+6. Bump Chart: Tracks changes in the national production-value rankings of agricultural commodities from 1985 to 2025. Connected ranking lines make changes in relative position easy to follow, highlighting the decline of wool and sheepmeat and the rise of commodities such as wheat, beef and canola.
+
+7. Annotated Multi-Line Chart with Drought Shock Bands: Contrasts observed broadacre TFP with climate-adjusted TFP from 1980 to 2024. Shaded bands identify major drought periods, while separate lines distinguish short-term fluctuations from the underlying productivity trend. This helps users understand how climatic variability affects observed performance and why productivity trends should be interpreted alongside weather conditions.
+
+8. Heatmap: Uses a state-by-year matrix to encode climate-related TFP deviations through a diverging red–yellow–green colour scale. This enables users to scan across states within a single drought year and identify systemic eastern-state synchronicity versus Western Australia’s counter-cyclical winter-rainfall regime and Tasmania’s low climatic exposure.
+
+9. Lollipop Chart: Represents annual TFP growth by horizontal stem length and R&D intensity by circle size. The combination allows users to compare productivity growth with research investment and its reported returns, highlighting differences between agricultural sectors and the potential contribution of research and development to long-term efficiency.
+
+10. Slope Chart: Compares national agricultural output shares across four farm-size tiers between the 1990s and 2020s. The two endpoints and connecting lines emphasise changes over time, particularly the increase in the largest 10% of farms' share from 44% to 69.5%. This helps users understand the growing concentration of agricultural output among larger farms.
+
+11. Butterfly Chart (Diverging Bar Chart): Places cost-to-output ratios on the left and rates of return on capital on the right for six farm-turnover classes. The mirrored layout facilitates direct comparisons between operating costs and financial returns, helping users examine economies of scale and understand how farm size relates to cost efficiency and profitability.
+
+12. Flow Map: Uses radial flows to connect Australia with eight primary international agricultural trading hubs on an Equal-Earth Pacific-centred projection. Line thickness represents export value, while colour distinguishes destination trade corridors. Hover interactions reveal details about individual destinations. This map connects domestic productivity with international markets, showing how Australia's agricultural production supports exports and where its major trading relationships are concentrated.

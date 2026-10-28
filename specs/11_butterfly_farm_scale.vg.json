@@ -3,12 +3,12 @@
   "data": {
     "url": "data/abares_farm_scale_butterfly.csv"
   },
-  "spacing": 12,
+  "spacing": 8,
   "bounds": "flush",
   "hconcat": [
     {
-      "width": 250,
-      "height": 260,
+      "width": 165,
+      "height": 265,
       "layer": [
         {
           "mark": {
@@ -27,23 +27,21 @@
                 "field": "Sort_Order",
                 "order": "ascending"
               },
-              "axis": {
-                "title": null,
-                "labelFontWeight": 600,
-                "labelFontSize": 10.5,
-                "labelLimit": 160
-              }
+              "axis": null
             },
             "x": {
               "field": "Cost_To_Output_Ratio_Pct",
               "type": "quantitative",
               "sort": "descending",
               "scale": {
-                "domain": [0, 100]
+                "domain": [
+                  0,
+                  115
+                ]
               },
               "axis": {
                 "title": "Cost-to-Output (%)",
-                "tickCount": 5
+                "tickCount": 4
               }
             },
             "tooltip": [
@@ -63,11 +61,11 @@
         {
           "mark": {
             "type": "text",
-            "align": "right",
-            "dx": -6,
+            "align": "left",
+            "dx": 8,
             "fontSize": 10.5,
             "fontWeight": "bold",
-            "fill": "#C85A32"
+            "fill": "#FFFFFF"
           },
           "encoding": {
             "y": {
@@ -93,8 +91,8 @@
       ]
     },
     {
-      "width": 60,
-      "height": 260,
+      "width": 185,
+      "height": 265,
       "layer": [
         {
           "mark": {
@@ -113,17 +111,25 @@
                 "field": "Sort_Order",
                 "order": "ascending"
               },
-              "axis": null
+              "axis": {
+                "title": null,
+                "labelFontWeight": 600,
+                "labelFontSize": 10.5,
+                "labelLimit": 130
+              }
             },
             "x": {
               "field": "Rate_Of_Return_Pct",
               "type": "quantitative",
               "scale": {
-                "domain": [0, 24]
+                "domain": [
+                  0,
+                  12.5
+                ]
               },
               "axis": {
                 "title": "Rate of Return (%)",
-                "values": [0, 10, 20]
+                "tickCount": 4
               }
             },
             "tooltip": [
@@ -149,7 +155,7 @@
           "mark": {
             "type": "text",
             "align": "left",
-            "dx": 6,
+            "dx": 5,
             "fontSize": 10.5,
             "fontWeight": "bold",
             "fill": "#1E4D3B"
@@ -185,13 +191,21 @@
       "contains": "padding"
     },
     "axis": {
-      "labelFontSize": 11,
-      "titleFontSize": 11.5,
+      "labelFontSize": 11.5,
+      "titleFontSize": 12,
       "titleFontWeight": 600,
       "titleColor": "#232725",
       "labelColor": "#454D48",
       "gridColor": "#EAE3D2",
       "domainColor": "#C7BFA8"
+    },
+    "legend": {
+      "labelFontSize": 11,
+      "titleFontSize": 11.5,
+      "titleFontWeight": 600,
+      "titleColor": "#1E4D3B",
+      "titleLimit": 220,
+      "labelLimit": 220
     },
     "view": {
       "stroke": "transparent"

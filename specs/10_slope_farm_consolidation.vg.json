@@ -54,7 +54,8 @@
             ]
           },
           "legend": {
-            "title": "Farm Size Tier (% of Farms)"
+            "title": "Farm Size Tier (% of Farms)",
+            "labelLimit": 350
           }
         },
         "tooltip": [
@@ -84,46 +85,9 @@
       }
     },
     {
-      "transform": [
-        {
-          "filter": "!(datum.Period == '1990s Average' && datum.Share_of_National_Output_Pct == 21.0)"
-        }
-      ],
       "mark": {
         "type": "text",
         "dy": -12,
-        "fontSize": 11.5,
-        "fontWeight": "bold"
-      },
-      "encoding": {
-        "x": {
-          "field": "Period",
-          "type": "ordinal"
-        },
-        "y": {
-          "field": "Share_of_National_Output_Pct",
-          "type": "quantitative"
-        },
-        "color": {
-          "field": "Size_Tier",
-          "type": "nominal"
-        },
-        "text": {
-          "field": "Share_of_National_Output_Pct",
-          "type": "quantitative",
-          "format": ".1f"
-        }
-      }
-    },
-    {
-      "transform": [
-        {
-          "filter": "datum.Period == '1990s Average' && datum.Share_of_National_Output_Pct == 21.0"
-        }
-      ],
-      "mark": {
-        "type": "text",
-        "dy": 15,
         "fontSize": 11.5,
         "fontWeight": "bold"
       },
@@ -152,15 +116,14 @@
         "values": [
           {
             "Period": "2020s Current",
-            "Y": 50,
+            "Y": 55,
             "Note": "+25.5% share shift to Mega-Farms"
           }
         ]
       },
       "mark": {
         "type": "text",
-        "align": "right",
-        "dx": 70,
+        "dx": -65,
         "fontSize": 11,
         "fontWeight": "bold",
         "fill": "#1E4D3B"
@@ -201,7 +164,8 @@
       "labelFontSize": 11.5,
       "titleFontSize": 12,
       "titleFontWeight": 600,
-      "titleColor": "#1E4D3B"
+      "titleColor": "#1E4D3B",
+      "labelLimit": 350
     },
     "view": {
       "stroke": "transparent"

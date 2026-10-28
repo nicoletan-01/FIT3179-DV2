@@ -55,11 +55,7 @@
       },
       "transform": [
         {
-          "calculate": "toNumber(datum.id)",
-          "as": "id_num"
-        },
-        {
-          "lookup": "id_num",
+          "lookup": "id",
           "from": {
             "data": {
               "url": "data/usda_oecd_global_tfp.csv"
@@ -87,7 +83,7 @@
           "field": "TFP_Index_2024",
           "type": "quantitative",
           "scale": {
-            "scheme": "viridis",
+            "scheme": "greens",
             "domain": [
               115,
               220

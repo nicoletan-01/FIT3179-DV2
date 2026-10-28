@@ -1,122 +1,106 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 680,
-  "height": 360,
+  "description": "Dot density map of Australian agricultural production. Each dot = $200 million of annual gross output (2024-25), placed within its production region. Click the legend to isolate one farming sector.",
+  "width": 650,
+  "height": 380,
   "projection": {
-    "type": "equalEarth"
+    "type": "conicEqualArea",
+    "parallels": [
+      -18,
+      -36
+    ],
+    "rotate": [
+      -133,
+      0,
+      0
+    ]
   },
   "layer": [
     {
       "data": {
-        "sphere": true
-      },
-      "mark": {
-        "type": "geoshape",
-        "fill": "#F4EFE4"
-      }
-    },
-    {
-      "data": {
-        "graticule": {
-          "step": [
-            30,
-            30
-          ]
-        }
-      },
-      "mark": {
-        "type": "geoshape",
-        "stroke": "#E2DAC6",
-        "strokeWidth": 0.5
-      }
-    },
-    {
-      "data": {
-        "url": "data/world_110m.json",
+        "url": "data/au_states.geojson",
         "format": {
-          "type": "topojson",
-          "feature": "countries"
+          "type": "json",
+          "property": "features"
         }
       },
       "mark": {
         "type": "geoshape",
-        "fill": "#E4DEC9",
+        "fill": "#E6E0D0",
         "stroke": "#FBF8F3",
-        "strokeWidth": 0.5
+        "strokeWidth": 1.4
       }
     },
     {
       "data": {
-        "url": "data/world_110m.json",
-        "format": {
-          "type": "topojson",
-          "feature": "countries"
-        }
+        "url": "data/aus_ag_dot_density.csv"
       },
-      "transform": [
+      "params": [
         {
-          "lookup": "id",
-          "from": {
-            "data": {
-              "url": "data/usda_oecd_global_tfp.csv"
-            },
-            "key": "id",
+          "name": "pick",
+          "select": {
+            "type": "point",
             "fields": [
-              "Country",
-              "TFP_Index_2024",
-              "Annual_TFP_Growth_Pct",
-              "OECD_Producer_Support_Pct"
+              "sector"
             ]
-          }
-        },
-        {
-          "filter": "datum.TFP_Index_2024 != null"
+          },
+          "bind": "legend"
         }
       ],
       "mark": {
-        "type": "geoshape",
-        "stroke": "#FFFFFF",
-        "strokeWidth": 0.9
+        "type": "circle",
+        "size": 18
       },
       "encoding": {
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        },
         "color": {
-          "field": "TFP_Index_2024",
-          "type": "quantitative",
+          "field": "sector",
+          "type": "nominal",
           "scale": {
-            "scheme": "viridis",
             "domain": [
-              115,
-              220
+              "Broadacre Cropping",
+              "Beef & Sheep Livestock",
+              "Horticulture & Cotton",
+              "Dairy"
+            ],
+            "range": [
+              "#1E4D3B",
+              "#C85A32",
+              "#D98A2B",
+              "#3B6E8C"
             ]
           },
           "legend": {
-            "title": "TFP Index (1990=100)",
-            "orient": "bottom"
+            "title": "1 dot = $200 million",
+            "orient": "top-left",
+            "symbolSize": 110,
+            "labelFontSize": 11.5
           }
+        },
+        "opacity": {
+          "condition": {
+            "param": "pick",
+            "value": 0.88
+          },
+          "value": 0.06
         },
         "tooltip": [
           {
-            "field": "Country",
+            "field": "region",
             "type": "nominal",
-            "title": "Country"
+            "title": "Production Region"
           },
           {
-            "field": "TFP_Index_2024",
-            "type": "quantitative",
-            "title": "2024 TFP Index (1990=100)",
-            "format": ".1f"
-          },
-          {
-            "field": "Annual_TFP_Growth_Pct",
-            "type": "quantitative",
-            "title": "Annual TFP Growth (%)",
-            "format": ".2f"
-          },
-          {
-            "field": "OECD_Producer_Support_Pct",
-            "type": "quantitative",
-            "title": "OECD Producer Subsidy (% Receipts)",
-            "format": ".1f"
+            "field": "sector",
+            "type": "nominal",
+            "title": "Farming Sector ($200M/dot)"
           }
         ]
       }
@@ -125,30 +109,34 @@
       "data": {
         "values": [
           {
-            "Lon": 134,
-            "Lat": -25,
-            "Label": "Australia: 164.2 TFP Index with only 2.4% OECD subsidy"
+            "lon": 125.5,
+            "lat": -24.2,
+            "t": "Arid interior (<250mm rain) has no cropping,"
+          },
+          {
+            "lon": 125.5,
+            "lat": -25.8,
+            "t": "supporting only low-density cattle stations"
           }
         ]
       },
       "mark": {
         "type": "text",
-        "dy": 32,
-        "fontSize": 11.5,
-        "fontWeight": "bold",
-        "fill": "#C85A32"
+        "fontSize": 11,
+        "fontStyle": "italic",
+        "fill": "#5A635D"
       },
       "encoding": {
         "longitude": {
-          "field": "Lon",
+          "field": "lon",
           "type": "quantitative"
         },
         "latitude": {
-          "field": "Lat",
+          "field": "lat",
           "type": "quantitative"
         },
         "text": {
-          "field": "Label",
+          "field": "t",
           "type": "nominal"
         }
       }
@@ -161,19 +149,10 @@
       "type": "fit",
       "contains": "padding"
     },
-    "axis": {
-      "labelFontSize": 11.5,
-      "titleFontSize": 12,
-      "titleFontWeight": 600,
-      "titleColor": "#232725",
-      "labelColor": "#454D48",
-      "gridColor": "#EAE3D2",
-      "domainColor": "#C7BFA8"
-    },
     "legend": {
       "labelFontSize": 11.5,
       "titleFontSize": 12,
-      "titleFontWeight": 600,
+      "titleFontWeight": 700,
       "titleColor": "#1E4D3B"
     },
     "view": {

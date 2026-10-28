@@ -9,7 +9,8 @@ const CHARTS = [
   { id: "#vis08", spec: "specs/08_heatmap_climate_matrix.vg.json" },
   { id: "#vis09", spec: "specs/09_lollipop_rd_investment.vg.json" },
   { id: "#vis10", spec: "specs/10_slope_farm_consolidation.vg.json" },
-  { id: "#vis11", spec: "specs/11_butterfly_farm_scale.vg.json" }
+  { id: "#vis11", spec: "specs/11_butterfly_farm_scale.vg.json" },
+  { id: "#vis12", spec: "specs/12_flow_map_productivity_exports.vg.json" }
 ];
 
 document.addEventListener("DOMContentLoaded", () => {

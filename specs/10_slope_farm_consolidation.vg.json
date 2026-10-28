@@ -152,14 +152,15 @@
         "values": [
           {
             "Period": "2020s Current",
-            "Y": 55,
+            "Y": 38,
             "Note": "+25.5% share shift to Mega-Farms"
           }
         ]
       },
       "mark": {
         "type": "text",
-        "dx": -65,
+        "align": "right",
+        "dx": -20,
         "fontSize": 11,
         "fontWeight": "bold",
         "fill": "#1E4D3B"

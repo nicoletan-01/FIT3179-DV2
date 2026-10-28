@@ -160,7 +160,7 @@
       "mark": {
         "type": "text",
         "align": "right",
-        "dx": -120,
+        "dx": 100,
         "fontSize": 11,
         "fontWeight": "bold",
         "fill": "#1E4D3B"

@@ -1,0 +1,545 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Pacific-Centred Global Agricultural Export Corridors (2024-25). Encodes radial trade flows from Australia across five key international corridors. Line width encodes export value in A$ Millions; line colour encodes the destination corridor. Terminal destination markers are uniform anchor pins (zero bubble scaling).",
+  "title": {
+    "text": "Pacific-Centred Global Agricultural Export Corridors (2024\u201325)",
+    "subtitle": [
+      "Originating from Australia to 18 key international destination markets ($75.8B total agricultural export dividend).",
+      "Flow width encodes export value ($M AUD); corridor colour indicates region. Terminal markers are uniform (no bubble sizing)."
+    ],
+    "fontSize": 15,
+    "subtitleFontSize": 11.5,
+    "anchor": "start",
+    "color": "#1E4D3B",
+    "subtitleColor": "#5C6660",
+    "offset": 14
+  },
+  "width": "container",
+  "height": 520,
+  "background": "transparent",
+  "projection": {
+    "type": "equalEarth",
+    "rotate": [
+      -150,
+      0,
+      0
+    ]
+  },
+  "params": [
+    {
+      "name": "corridor_focus",
+      "value": "All Trade Corridors",
+      "bind": {
+        "input": "select",
+        "options": [
+          "All Trade Corridors",
+          "East Asia",
+          "Southeast Asia",
+          "North America",
+          "Europe & Middle East",
+          "South Asia & Oceania"
+        ],
+        "name": "Trade Corridor Filter: "
+      }
+    }
+  ],
+  "layer": [
+    {
+      "name": "ocean_graticule",
+      "data": {
+        "graticule": {
+          "step": [
+            30,
+            30
+          ]
+        }
+      },
+      "mark": {
+        "type": "geoshape",
+        "stroke": "#EAE3D2",
+        "strokeWidth": 0.5,
+        "fill": null
+      }
+    },
+    {
+      "name": "world_land",
+      "data": {
+        "url": "data/ne_110m_admin_0_countries.topojson",
+        "format": {
+          "type": "topojson",
+          "feature": "ne_110m_admin_0_countries"
+        }
+      },
+      "transform": [
+        {
+          "filter": "datum.properties.NAME != 'Antarctica'"
+        }
+      ],
+      "mark": {
+        "type": "geoshape",
+        "fill": "#E6E0D0",
+        "stroke": "#FFFFFF",
+        "strokeWidth": 0.5
+      }
+    },
+    {
+      "name": "australia_highlight",
+      "data": {
+        "url": "data/ne_110m_admin_0_countries.topojson",
+        "format": {
+          "type": "topojson",
+          "feature": "ne_110m_admin_0_countries"
+        }
+      },
+      "transform": [
+        {
+          "filter": "datum.properties.NAME == 'Australia'"
+        }
+      ],
+      "mark": {
+        "type": "geoshape",
+        "fill": "#1E4D3B",
+        "stroke": "#D98A2B",
+        "strokeWidth": 0.8
+      }
+    },
+    {
+      "name": "corridor_flow_lines",
+      "data": {
+        "url": "data/flow_routes_productivity_2025.csv"
+      },
+      "transform": [
+        {
+          "filter": "corridor_focus == 'All Trade Corridors' || datum.region == corridor_focus"
+        }
+      ],
+      "mark": {
+        "type": "line",
+        "strokeCap": "round"
+      },
+      "encoding": {
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        },
+        "detail": {
+          "field": "country",
+          "type": "nominal"
+        },
+        "order": {
+          "field": "order",
+          "type": "quantitative"
+        },
+        "strokeWidth": {
+          "field": "value",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              0,
+              17000
+            ],
+            "range": [
+              1.2,
+              8.0
+            ]
+          },
+          "legend": null
+        },
+        "color": {
+          "field": "region",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "East Asia",
+              "Southeast Asia",
+              "North America",
+              "Europe & Middle East",
+              "South Asia & Oceania"
+            ],
+            "range": [
+              "#1E4D3B",
+              "#3B6E8C",
+              "#D98A2B",
+              "#C85A32",
+              "#6B8E23"
+            ]
+          },
+          "legend": {
+            "title": "Export Trade Corridor",
+            "orient": "bottom",
+            "direction": "horizontal",
+            "labelFontSize": 11.5,
+            "titleFontSize": 12,
+            "titleColor": "#1E4D3B",
+            "symbolType": "stroke",
+            "symbolStrokeWidth": 3.5,
+            "symbolSize": 180,
+            "offset": 8
+          }
+        },
+        "opacity": {
+          "value": 0.72
+        }
+      }
+    },
+    {
+      "name": "destination_beacon_rings",
+      "data": {
+        "url": "data/flows_productivity_2025.csv"
+      },
+      "transform": [
+        {
+          "filter": "corridor_focus == 'All Trade Corridors' || datum.region == corridor_focus"
+        }
+      ],
+      "mark": {
+        "type": "circle",
+        "size": 110,
+        "fill": null,
+        "strokeWidth": 1.2,
+        "opacity": 0.35
+      },
+      "encoding": {
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        },
+        "stroke": {
+          "field": "region",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "East Asia",
+              "Southeast Asia",
+              "North America",
+              "Europe & Middle East",
+              "South Asia & Oceania"
+            ],
+            "range": [
+              "#1E4D3B",
+              "#3B6E8C",
+              "#D98A2B",
+              "#C85A32",
+              "#6B8E23"
+            ]
+          },
+          "legend": null
+        }
+      }
+    },
+    {
+      "name": "destination_solid_pins",
+      "data": {
+        "url": "data/flows_productivity_2025.csv"
+      },
+      "transform": [
+        {
+          "filter": "corridor_focus == 'All Trade Corridors' || datum.region == corridor_focus"
+        }
+      ],
+      "mark": {
+        "type": "circle",
+        "size": 42,
+        "stroke": "#FFFFFF",
+        "strokeWidth": 1.5,
+        "opacity": 0.95,
+        "cursor": "pointer"
+      },
+      "encoding": {
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "region",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "East Asia",
+              "Southeast Asia",
+              "North America",
+              "Europe & Middle East",
+              "South Asia & Oceania"
+            ],
+            "range": [
+              "#1E4D3B",
+              "#3B6E8C",
+              "#D98A2B",
+              "#C85A32",
+              "#6B8E23"
+            ]
+          },
+          "legend": null
+        },
+        "tooltip": [
+          {
+            "field": "rank",
+            "type": "quantitative",
+            "title": "National Rank"
+          },
+          {
+            "field": "country",
+            "type": "nominal",
+            "title": "Export Market"
+          },
+          {
+            "field": "region",
+            "type": "nominal",
+            "title": "Trade Corridor"
+          },
+          {
+            "field": "value",
+            "type": "quantitative",
+            "title": "2024-25 Agricultural Exports (A$M)",
+            "format": "$,.0f"
+          },
+          {
+            "field": "value_label",
+            "type": "nominal",
+            "title": "Export Total"
+          },
+          {
+            "field": "share",
+            "type": "quantitative",
+            "title": "National Export Share (%)",
+            "format": ".1f"
+          },
+          {
+            "field": "key_commodities",
+            "type": "nominal",
+            "title": "Primary Exported Commodities"
+          },
+          {
+            "field": "trade_agreement",
+            "type": "nominal",
+            "title": "Governing Trade Framework"
+          }
+        ]
+      }
+    },
+    {
+      "name": "destination_labels_halo",
+      "data": {
+        "url": "data/flows_productivity_2025.csv"
+      },
+      "transform": [
+        {
+          "filter": "(corridor_focus == 'All Trade Corridors' || datum.region == corridor_focus) && datum.show_label == 'True'"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "fontSize": 10.5,
+        "fontWeight": 700,
+        "stroke": "#FFFFFF",
+        "strokeWidth": 2.6,
+        "strokeJoin": "round",
+        "fill": "#FFFFFF"
+      },
+      "encoding": {
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "display_label",
+          "type": "nominal"
+        },
+        "align": {
+          "field": "align",
+          "type": "nominal"
+        },
+        "dx": {
+          "field": "dx",
+          "type": "quantitative"
+        },
+        "dy": {
+          "field": "dy",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "name": "destination_labels_core",
+      "data": {
+        "url": "data/flows_productivity_2025.csv"
+      },
+      "transform": [
+        {
+          "filter": "(corridor_focus == 'All Trade Corridors' || datum.region == corridor_focus) && datum.show_label == 'True'"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "fontSize": 10.5,
+        "fontWeight": 600,
+        "fill": "#232725"
+      },
+      "encoding": {
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "display_label",
+          "type": "nominal"
+        },
+        "align": {
+          "field": "align",
+          "type": "nominal"
+        },
+        "dx": {
+          "field": "dx",
+          "type": "quantitative"
+        },
+        "dy": {
+          "field": "dy",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "name": "origin_hub",
+      "data": {
+        "values": [
+          {
+            "longitude": 133.5,
+            "latitude": -25.5,
+            "title": "AUSTRALIA (ORIGIN)",
+            "subtitle": ">70% Farm Output Exported"
+          }
+        ]
+      },
+      "encoding": {
+        "longitude": {
+          "field": "longitude",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "latitude",
+          "type": "quantitative"
+        }
+      },
+      "layer": [
+        {
+          "mark": {
+            "type": "circle",
+            "size": 150,
+            "stroke": "#D98A2B",
+            "strokeWidth": 1.5,
+            "fill": null,
+            "opacity": 0.4
+          }
+        },
+        {
+          "mark": {
+            "type": "circle",
+            "size": 55,
+            "color": "#1E4D3B",
+            "stroke": "#FFFFFF",
+            "strokeWidth": 2
+          }
+        },
+        {
+          "mark": {
+            "type": "text",
+            "align": "center",
+            "dy": -14,
+            "fontSize": 10.5,
+            "fontWeight": 800,
+            "stroke": "#FFFFFF",
+            "strokeWidth": 2.5,
+            "strokeJoin": "round",
+            "fill": "#FFFFFF",
+            "letterSpacing": 0.8
+          },
+          "encoding": {
+            "text": {
+              "field": "title",
+              "type": "nominal"
+            }
+          }
+        },
+        {
+          "mark": {
+            "type": "text",
+            "align": "center",
+            "dy": -14,
+            "fontSize": 10.5,
+            "fontWeight": 800,
+            "fill": "#1E4D3B",
+            "letterSpacing": 0.8
+          },
+          "encoding": {
+            "text": {
+              "field": "title",
+              "type": "nominal"
+            }
+          }
+        },
+        {
+          "mark": {
+            "type": "text",
+            "align": "center",
+            "dy": 14,
+            "fontSize": 9.5,
+            "fontWeight": 600,
+            "stroke": "#FFFFFF",
+            "strokeWidth": 2,
+            "strokeJoin": "round",
+            "fill": "#FFFFFF"
+          },
+          "encoding": {
+            "text": {
+              "field": "subtitle",
+              "type": "nominal"
+            }
+          }
+        },
+        {
+          "mark": {
+            "type": "text",
+            "align": "center",
+            "dy": 14,
+            "fontSize": 9.5,
+            "fontWeight": 600,
+            "fill": "#5C6660"
+          },
+          "encoding": {
+            "text": {
+              "field": "subtitle",
+              "type": "nominal"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "config": {
+    "background": "transparent",
+    "font": "'Source Sans 3', -apple-system, BlinkMacSystemFont, sans-serif",
+    "view": {
+      "stroke": "transparent"
+    }
+  }
+}

@@ -10,17 +10,17 @@
 * **Why:** Agriculture is important to Australia's economy, food supply and export industry. However, increased agricultural production does not necessarily mean improved productivity, as it may also result from greater resource use. This visualisation investigates how efficiently Australian farms convert inputs such as land, labour, machinery and fertiliser into agricultural outputs. It aims to explain why productivity growth differs between farming sectors and how innovation, climate conditions, research and development (R&D), and farm size contribute to long-term efficiency improvements.
 
 ## 2. What: The Data Sources
-1. Department of Foreign Affairs and Trade (DFAT): Agricultural Trade and the WTO — Bilateral export flow matrices, preferential free trade agreement (FTA) tariff regimes, and destination trade shares for Australian agricultural commodities.
+DFAT (Agricultural Trade and the WTO): Authored by the Australian Government Department of Foreign Affairs and Trade. Supplies bilateral export shipment volumes, trade values, and tariff concessions across primary Indo-Pacific, North American, European, and Middle Eastern corridors, grounding Australia's trade-exposed commercial model.
 
-2. ABARES (2025): Australian Farm Productivity: Broadacre and Dairy Estimates — 45-year historical Total Factor Productivity (TFP) series, input/output quantity indexes, and sectoral capital-labor dynamics.
+ABARES (2025) (Australian Farm Productivity: Broadacre and Dairy Estimates): Authored by the Australian Bureau of Agricultural and Resource Economics and Sciences. Provides the macroeconomic productivity wedge, showing that Australian agricultural output expanded by over 80% while aggregate inputs remained essentially flat.
 
-3. ABARES: Productivity Drivers, Climate-Adjusted TFP & Rural R&D Investment — Counterfactual climate-adjusted TFP growth trajectories, historical drought shock impacts, and benefit-cost ratios for rural R&D corporation investments.
+ABARES (Productivity Drivers, Climate-Adjusted TFP & Rural R&D Investment): Establishes the empirical link between high-return R&D adoption (benefit-cost ratios up to 11:1) and underlying productivity growth, separating climatic drag from technological advancement.
 
-4. ABARES: Disaggregating Farm Performance Statistics by Size — Australian Agricultural and Grazing Industries Survey (AAGIS) financial scale tiers, cost-to-output ratios, and capital returns across farm revenue classes.
+ABARES (Disaggregating Farm Performance Statistics by Size): Underpins the microeconomic scale analysis, detailing how top commercial farm tiers (>$1M–$5M+) produce the majority of national output at ~55% cost-to-output ratios compared to ~96% for small holdings.
 
-5. Australian Bureau of Statistics (ABS): Value of Agricultural Commodities Produced (Cat. 7503.0 & 7121.0) — Sub-national Gross Value of Agricultural Production (GVAP), state-level commodity volumes, and production census benchmarks.
+ABS (Value of Agricultural Commodities Produced): Authored by the Australian Bureau of Statistics. Supplies high-resolution spatial and sectoral financial data across beef, wheat, dairy, sheep, and horticulture across Australian states and territories.
 
-6. USDA Economic Research Service & OECD (2025): International Agricultural Productivity & Agricultural Policy Monitoring and Evaluation — Cross-country agricultural TFP growth indices and Producer Support Estimates (PSE) benchmarking Australia's unsubsidised market footing.
+USDA ERS & OECD (2025) (International Agricultural Productivity & Policy Monitoring): Standardises international productivity comparisons, proving that Australia's 1.52% p.a. TFP growth was achieved with the OECD's second-lowest subsidy level (PSE 2.4%).
 
 ## 3. How: Rationale for the Idioms
 1. Choropleth Map: Uses colour to encode state-level Gross Value of Agricultural Production (GVAP, A$ billion) or annual Total Factor Productivity (TFP) growth (%). An interactive metric selector allows users to switch between economic output and productivity efficiency, revealing how the states with the highest production value differ from those with the fastest productivity growth.

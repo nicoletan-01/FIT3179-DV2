@@ -57,7 +57,6 @@
     {
       "mark": {
         "type": "circle",
-        "color": "#1E4D3B",
         "opacity": 0.95,
         "stroke": "#FFFFFF",
         "strokeWidth": 1.5
@@ -93,6 +92,24 @@
             "offset": 8
           }
         },
+        "color": {
+          "field": "Benefit_Cost_Ratio",
+          "type": "quantitative",
+          "scale": {
+            "scheme": "viridis",
+            "domain": [
+              3.5,
+              9.5
+            ]
+          },
+          "legend": {
+            "title": "Benefit-Cost (x:1)",
+            "orient": "top",
+            "direction": "horizontal",
+            "titleLimit": 150,
+            "gradientLength": 130
+          }
+        },
         "tooltip": [
           {
             "field": "Industry",
@@ -110,6 +127,12 @@
             "type": "quantitative",
             "title": "R&D Intensity (% of GVP)",
             "format": ".2f"
+          },
+          {
+            "field": "Benefit_Cost_Ratio",
+            "type": "quantitative",
+            "title": "Benefit-Cost Return (x:1)",
+            "format": ".1f"
           },
           {
             "field": "Primary_Driver",
@@ -149,15 +172,15 @@
       "data": {
         "values": [
           {
-            "X": 1.55,
+            "X": 1.49,
             "Industry": "Wool Production",
-            "Note": "\u2190 National Mean TFP (1.52% p.a.)"
+            "Note": "National Mean TFP (1.52% p.a.) →"
           }
         ]
       },
       "mark": {
         "type": "text",
-        "align": "left",
+        "align": "right",
         "dy": 14,
         "fontSize": 10.5,
         "fontStyle": "italic",

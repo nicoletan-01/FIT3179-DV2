@@ -158,7 +158,7 @@
       "mark": {
         "type": "text",
         "align": "left",
-        "dy": 25,
+        "dy": 5,
         "fontSize": 10.5,
         "fontStyle": "italic",
         "fontWeight": "bold",

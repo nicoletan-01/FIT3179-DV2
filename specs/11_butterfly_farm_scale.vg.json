@@ -3,12 +3,12 @@
   "data": {
     "url": "data/abares_farm_scale_butterfly.csv"
   },
-  "spacing": 4,
+  "spacing": 12,
   "bounds": "flush",
   "hconcat": [
     {
-      "width": 170,
-      "height": 265,
+      "width": 250,
+      "height": 260,
       "layer": [
         {
           "mark": {
@@ -30,10 +30,8 @@
               "axis": {
                 "title": null,
                 "labelFontWeight": 600,
-                "labelFontSize": 11,
-                "labelColor": "#232725",
-                "labelPadding": 8,
-                "labelLimit": 155
+                "labelFontSize": 10.5,
+                "labelLimit": 160
               }
             },
             "x": {
@@ -41,14 +39,11 @@
               "type": "quantitative",
               "sort": "descending",
               "scale": {
-                "domain": [
-                  0,
-                  125
-                ]
+                "domain": [0, 100]
               },
               "axis": {
                 "title": "Cost-to-Output (%)",
-                "tickCount": 4
+                "tickCount": 5
               }
             },
             "tooltip": [
@@ -69,7 +64,7 @@
           "mark": {
             "type": "text",
             "align": "right",
-            "dx": -5,
+            "dx": -6,
             "fontSize": 10.5,
             "fontWeight": "bold",
             "fill": "#C85A32"
@@ -98,8 +93,8 @@
       ]
     },
     {
-      "width": 170,
-      "height": 265,
+      "width": 60,
+      "height": 260,
       "layer": [
         {
           "mark": {
@@ -124,14 +119,11 @@
               "field": "Rate_Of_Return_Pct",
               "type": "quantitative",
               "scale": {
-                "domain": [
-                  0,
-                  12.5
-                ]
+                "domain": [0, 24]
               },
               "axis": {
                 "title": "Rate of Return (%)",
-                "tickCount": 4
+                "values": [0, 10, 20]
               }
             },
             "tooltip": [
@@ -157,7 +149,7 @@
           "mark": {
             "type": "text",
             "align": "left",
-            "dx": 5,
+            "dx": 6,
             "fontSize": 10.5,
             "fontWeight": "bold",
             "fill": "#1E4D3B"
@@ -193,21 +185,13 @@
       "contains": "padding"
     },
     "axis": {
-      "labelFontSize": 11.5,
-      "titleFontSize": 12,
+      "labelFontSize": 11,
+      "titleFontSize": 11.5,
       "titleFontWeight": 600,
       "titleColor": "#232725",
       "labelColor": "#454D48",
       "gridColor": "#EAE3D2",
       "domainColor": "#C7BFA8"
-    },
-    "legend": {
-      "labelFontSize": 11,
-      "titleFontSize": 11.5,
-      "titleFontWeight": 600,
-      "titleColor": "#1E4D3B",
-      "titleLimit": 220,
-      "labelLimit": 220
     },
     "view": {
       "stroke": "transparent"

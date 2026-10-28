@@ -84,9 +84,46 @@
       }
     },
     {
+      "transform": [
+        {
+          "filter": "!(datum.Period == '1990s Average' && datum.Share_of_National_Output_Pct == 21.0)"
+        }
+      ],
       "mark": {
         "type": "text",
         "dy": -12,
+        "fontSize": 11.5,
+        "fontWeight": "bold"
+      },
+      "encoding": {
+        "x": {
+          "field": "Period",
+          "type": "ordinal"
+        },
+        "y": {
+          "field": "Share_of_National_Output_Pct",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "Size_Tier",
+          "type": "nominal"
+        },
+        "text": {
+          "field": "Share_of_National_Output_Pct",
+          "type": "quantitative",
+          "format": ".1f"
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.Period == '1990s Average' && datum.Share_of_National_Output_Pct == 21.0"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "dy": 15,
         "fontSize": 11.5,
         "fontWeight": "bold"
       },

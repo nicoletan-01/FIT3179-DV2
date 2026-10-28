@@ -1,37 +1,17 @@
-country,rank,value,share,point,order,lon,lat,region
-China,1,16716.0,22.0,Australia,1,133.5,-25.5,East Asia
-China,1,16716.0,22.0,Market,2,104.2,35.8,East Asia
-United States,2,9132.0,12.0,Australia,1,133.5,-25.5,North America
-United States,2,9132.0,12.0,Market,2,-95.7,37.1,North America
-Japan,3,5198.0,6.9,Australia,1,133.5,-25.5,East Asia
-Japan,3,5198.0,6.9,Market,2,138.3,36.2,East Asia
-European Union,4,4428.0,5.8,Australia,1,133.5,-25.5,Europe & Middle East
-European Union,4,4428.0,5.8,Market,2,10.4,51.2,Europe & Middle East
-South Korea,5,4065.0,5.4,Australia,1,133.5,-25.5,East Asia
-South Korea,5,4065.0,5.4,Market,2,127.8,35.9,East Asia
-Indonesia,6,4052.0,5.3,Australia,1,133.5,-25.5,Southeast Asia
-Indonesia,6,4052.0,5.3,Market,2,113.9,-0.8,Southeast Asia
-New Zealand,7,2874.0,3.8,Australia,1,133.5,-25.5,South Asia & Oceania
-New Zealand,7,2874.0,3.8,Market,2,174.9,-40.9,South Asia & Oceania
-India,8,2592.0,3.4,Australia,1,133.5,-25.5,South Asia & Oceania
-India,8,2592.0,3.4,Market,2,79.0,20.6,South Asia & Oceania
-Vietnam,9,2518.0,3.3,Australia,1,133.5,-25.5,Southeast Asia
-Vietnam,9,2518.0,3.3,Market,2,108.2,14.1,Southeast Asia
-Philippines,10,2112.0,2.8,Australia,1,133.5,-25.5,Southeast Asia
-Philippines,10,2112.0,2.8,Market,2,121.8,12.9,Southeast Asia
-UAE,11,1895.0,2.5,Australia,1,133.5,-25.5,Europe & Middle East
-UAE,11,1895.0,2.5,Market,2,53.8,23.4,Europe & Middle East
-Thailand,12,1882.0,2.5,Australia,1,133.5,-25.5,Southeast Asia
-Thailand,12,1882.0,2.5,Market,2,101.0,15.9,Southeast Asia
-Malaysia,13,1796.0,2.4,Australia,1,133.5,-25.5,Southeast Asia
-Malaysia,13,1796.0,2.4,Market,2,101.9,4.2,Southeast Asia
-Singapore,14,1463.0,1.9,Australia,1,133.5,-25.5,Southeast Asia
-Singapore,14,1463.0,1.9,Market,2,103.8,1.4,Southeast Asia
-Canada,15,1298.0,1.7,Australia,1,133.5,-25.5,North America
-Canada,15,1298.0,1.7,Market,2,-106.3,56.1,North America
-Taiwan,16,1134.0,1.5,Australia,1,133.5,-25.5,East Asia
-Taiwan,16,1134.0,1.5,Market,2,121.0,23.7,East Asia
-United Kingdom,17,1072.0,1.4,Australia,1,133.5,-25.5,Europe & Middle East
-United Kingdom,17,1072.0,1.4,Market,2,-3.4,55.4,Europe & Middle East
-Saudi Arabia,18,980.0,1.3,Australia,1,133.5,-25.5,Europe & Middle East
-Saudi Arabia,18,980.0,1.3,Market,2,45.1,23.9,Europe & Middle East
+country,rank,value,share,point,order,lon,lat,region,rank_label,value_full,share_pct,key_commodities,trade_agreement
+China,1,16716.0,22.0,Australia,1,133.5,-25.5,East Asia,#1 National Export Market,"A$16,716 Million ($16.7B)",22.0% of all farm exports,"Beef, Wheat, Barley, Wool, Cotton",ChAFTA (China-Australia FTA)
+China,1,16716.0,22.0,Market,2,104.2,35.8,East Asia,#1 National Export Market,"A$16,716 Million ($16.7B)",22.0% of all farm exports,"Beef, Wheat, Barley, Wool, Cotton",ChAFTA (China-Australia FTA)
+United States,2,9132.0,12.0,Australia,1,133.5,-25.5,North America,#2 National Export Market,"A$9,132 Million ($9.1B)",12.0% of all farm exports,"Beef, Wine, Lamb, Dairy, Canola",AUSFTA (Australia-US FTA)
+United States,2,9132.0,12.0,Market,2,-95.7,37.1,North America,#2 National Export Market,"A$9,132 Million ($9.1B)",12.0% of all farm exports,"Beef, Wine, Lamb, Dairy, Canola",AUSFTA (Australia-US FTA)
+Japan,3,5198.0,6.9,Australia,1,133.5,-25.5,East Asia,#3 National Export Market,"A$5,198 Million ($5.2B)",6.9% of all farm exports,"Beef, Wheat, Barley, Dairy, Sugar",JAEPA & CPTPP
+Japan,3,5198.0,6.9,Market,2,138.3,36.2,East Asia,#3 National Export Market,"A$5,198 Million ($5.2B)",6.9% of all farm exports,"Beef, Wheat, Barley, Dairy, Sugar",JAEPA & CPTPP
+European Union,4,4428.0,5.8,Australia,1,133.5,-25.5,Europe & Middle East,#4 National Export Market,"A$4,428 Million ($4.4B)",5.8% of all farm exports,"Canola, Wine, Wool, Beef, Pulses",WTO Most-Favoured-Nation
+European Union,4,4428.0,5.8,Market,2,10.4,51.2,Europe & Middle East,#4 National Export Market,"A$4,428 Million ($4.4B)",5.8% of all farm exports,"Canola, Wine, Wool, Beef, Pulses",WTO Most-Favoured-Nation
+Indonesia,5,4052.0,5.3,Australia,1,133.5,-25.5,Southeast Asia,#5 National Export Market,"A$4,052 Million ($4.1B)",5.3% of all farm exports,"Live Cattle, Wheat, Sugar, Cotton, Pulses",IA-CEPA & AANZFTA
+Indonesia,5,4052.0,5.3,Market,2,113.9,-0.8,Southeast Asia,#5 National Export Market,"A$4,052 Million ($4.1B)",5.3% of all farm exports,"Live Cattle, Wheat, Sugar, Cotton, Pulses",IA-CEPA & AANZFTA
+New Zealand,6,2874.0,3.8,Australia,1,133.5,-25.5,South Asia & Oceania,#6 National Export Market,"A$2,874 Million ($2.9B)",3.8% of all farm exports,"Wine, Sugar, Cereals, Fresh Produce",ANZCERTA (Closer Economic Relations)
+New Zealand,6,2874.0,3.8,Market,2,174.9,-40.9,South Asia & Oceania,#6 National Export Market,"A$2,874 Million ($2.9B)",3.8% of all farm exports,"Wine, Sugar, Cereals, Fresh Produce",ANZCERTA (Closer Economic Relations)
+India,7,2592.0,3.4,Australia,1,133.5,-25.5,South Asia & Oceania,#7 National Export Market,"A$2,592 Million ($2.6B)",3.4% of all farm exports,"Lentils, Chickpeas, Wool, Cotton, Almonds",AI-ECTA (Economic Trade Agreement)
+India,7,2592.0,3.4,Market,2,79.0,20.6,South Asia & Oceania,#7 National Export Market,"A$2,592 Million ($2.6B)",3.4% of all farm exports,"Lentils, Chickpeas, Wool, Cotton, Almonds",AI-ECTA (Economic Trade Agreement)
+UAE,8,1895.0,2.5,Australia,1,133.5,-25.5,Europe & Middle East,#8 National Export Market,"A$1,895 Million ($1.9B)",2.5% of all farm exports,"Canola, Meat (Sheep & Goat), Wheat, Pulses",Australia-UAE CEPA
+UAE,8,1895.0,2.5,Market,2,53.8,23.4,Europe & Middle East,#8 National Export Market,"A$1,895 Million ($1.9B)",2.5% of all farm exports,"Canola, Meat (Sheep & Goat), Wheat, Pulses",Australia-UAE CEPA

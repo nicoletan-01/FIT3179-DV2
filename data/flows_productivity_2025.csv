@@ -1,19 +1,9 @@
-rank,country,region,value,share,lon,lat,value_label,display_label,align,dx,dy,show_label,key_commodities,trade_agreement
-1,China,East Asia,16716.0,22.0,104.2,35.8,$16.7B,China ($16.7B),right,-12,-6,True,"Beef, Wheat, Barley, Wool, Cotton",ChAFTA (China-Australia FTA)
-2,United States,North America,9132.0,12.0,-95.7,37.1,$9.1B,United States ($9.1B),left,12,0,True,"Beef, Wine, Lamb, Dairy, Canola",AUSFTA (Australia-US FTA)
-3,Japan,East Asia,5198.0,6.9,138.3,36.2,$5.2B,Japan ($5.2B),left,12,-4,True,"Beef, Wheat, Barley, Dairy, Sugar",JAEPA & CPTPP
-4,European Union,Europe & Middle East,4428.0,5.8,10.4,51.2,$4.4B,EU ($4.4B),right,-12,-6,True,"Canola, Wine, Wool, Beef, Pulses",WTO Most-Favoured-Nation
-5,South Korea,East Asia,4065.0,5.4,127.8,35.9,$4.1B,S. Korea ($4.1B),center,0,-24,True,"Beef, Wheat, Sugar, Dairy, Barley",KAFTA (Korea-Australia FTA)
-6,Indonesia,Southeast Asia,4052.0,5.3,113.9,-0.8,$4.1B,Indonesia ($4.1B),right,-12,6,True,"Live Cattle, Wheat, Sugar, Cotton, Pulses",IA-CEPA & AANZFTA
-7,New Zealand,South Asia & Oceania,2874.0,3.8,174.9,-40.9,$2.9B,New Zealand ($2.9B),left,12,6,True,"Wine, Sugar, Cereals, Fresh Produce",ANZCERTA (Closer Economic Relations)
-8,India,South Asia & Oceania,2592.0,3.4,79.0,20.6,$2.6B,India ($2.6B),left,12,14,True,"Lentils, Chickpeas, Wool, Cotton, Almonds",AI-ECTA (Economic Cooperation & Trade)
-9,Vietnam,Southeast Asia,2518.0,3.3,108.2,14.1,$2.5B,Vietnam ($2.5B),left,12,4,False,"Wheat, Barley, Cotton, Beef, Live Cattle",CPTPP & AANZFTA
-10,Philippines,Southeast Asia,2112.0,2.8,121.8,12.9,$2.1B,Philippines ($2.1B),left,12,4,False,"Wheat, Dairy, Beef, Pulses",AANZFTA & RCEP
-11,UAE,Europe & Middle East,1895.0,2.5,53.8,23.4,$1.9B,UAE ($1.9B),right,-12,-4,True,"Canola, Meat (Sheep & Goat), Wheat, Pulses",Australia-UAE CEPA
-12,Thailand,Southeast Asia,1882.0,2.5,101.0,15.9,$1.9B,Thailand ($1.9B),right,-12,0,False,"Wheat, Dairy, Cotton, Beef, Malt",TAFTA & RCEP
-13,Malaysia,Southeast Asia,1796.0,2.4,101.9,4.2,$1.8B,Malaysia ($1.8B),right,-12,4,False,"Wheat, Dairy, Sugar, Lamb, Beef",MAFTA & CPTPP
-14,Singapore,Southeast Asia,1463.0,1.9,103.8,1.4,$1.5B,Singapore ($1.5B),right,-12,6,False,"Dairy, Beef, Wine, Horticulture, Pork",SAFTA & CPTPP
-15,Canada,North America,1298.0,1.7,-106.3,56.1,$1.3B,Canada ($1.3B),left,12,-6,True,"Beef, Wine, Lamb, Sugar, Citrus",CPTPP
-16,Taiwan,East Asia,1134.0,1.5,121.0,23.7,$1.1B,Taiwan ($1.1B),left,12,2,False,"Beef, Dairy, Wheat, Malt, Seafood",WTO Framework
-17,United Kingdom,Europe & Middle East,1072.0,1.4,-3.4,55.4,$1.1B,UK ($1.1B),left,12,10,False,"Wine, Beef, Lamb, Sugar, Canola",A-UK FTA (Free Trade Agreement)
-18,Saudi Arabia,Europe & Middle East,980.0,1.3,45.1,23.9,$980M,Saudi Arabia ($980M),right,-12,8,False,"Barley, Meat (Sheep/Goat), Dairy, Wheat",WTO Most-Favoured-Nation
+rank,country,region,value,share,lon,lat,value_label,display_label,align,dx,dy,rank_label,value_full,share_pct,key_commodities,trade_agreement
+1,China,East Asia,16716.0,22.0,104.2,35.8,$16.7B,China ($16.7B),right,-14,-4,#1 National Export Market,"A$16,716 Million ($16.7B)",22.0% of all farm exports,"Beef, Wheat, Barley, Wool, Cotton",ChAFTA (China-Australia FTA)
+2,United States,North America,9132.0,12.0,-95.7,37.1,$9.1B,United States ($9.1B),left,14,0,#2 National Export Market,"A$9,132 Million ($9.1B)",12.0% of all farm exports,"Beef, Wine, Lamb, Dairy, Canola",AUSFTA (Australia-US FTA)
+3,Japan,East Asia,5198.0,6.9,138.3,36.2,$5.2B,Japan ($5.2B),left,14,-4,#3 National Export Market,"A$5,198 Million ($5.2B)",6.9% of all farm exports,"Beef, Wheat, Barley, Dairy, Sugar",JAEPA & CPTPP
+4,European Union,Europe & Middle East,4428.0,5.8,10.4,51.2,$4.4B,EU ($4.4B),right,-14,-4,#4 National Export Market,"A$4,428 Million ($4.4B)",5.8% of all farm exports,"Canola, Wine, Wool, Beef, Pulses",WTO Most-Favoured-Nation
+5,Indonesia,Southeast Asia,4052.0,5.3,113.9,-0.8,$4.1B,Indonesia ($4.1B),right,-14,6,#5 National Export Market,"A$4,052 Million ($4.1B)",5.3% of all farm exports,"Live Cattle, Wheat, Sugar, Cotton, Pulses",IA-CEPA & AANZFTA
+6,New Zealand,South Asia & Oceania,2874.0,3.8,174.9,-40.9,$2.9B,New Zealand ($2.9B),left,14,6,#6 National Export Market,"A$2,874 Million ($2.9B)",3.8% of all farm exports,"Wine, Sugar, Cereals, Fresh Produce",ANZCERTA (Closer Economic Relations)
+7,India,South Asia & Oceania,2592.0,3.4,79.0,20.6,$2.6B,India ($2.6B),left,14,12,#7 National Export Market,"A$2,592 Million ($2.6B)",3.4% of all farm exports,"Lentils, Chickpeas, Wool, Cotton, Almonds",AI-ECTA (Economic Trade Agreement)
+8,UAE,Europe & Middle East,1895.0,2.5,53.8,23.4,$1.9B,UAE ($1.9B),right,-14,-6,#8 National Export Market,"A$1,895 Million ($1.9B)",2.5% of all farm exports,"Canola, Meat (Sheep & Goat), Wheat, Pulses",Australia-UAE CEPA

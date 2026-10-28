@@ -1,6 +1,5 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "description": "Pacific-Centred Global Agricultural Export Corridors (2024\u201325). Reduced to 8 major national destinations with zero label overlap and responsive interactive tooltips.",
   "width": "container",
   "height": 520,
   "background": "transparent",

@@ -1,19 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "description": "Pacific-Centred Global Agricultural Export Corridors (2024\u201325). Reduced to 8 major national destinations with zero label overlap and responsive interactive tooltips.",
-  "title": {
-    "text": "Pacific-Centred Global Agricultural Export Corridors (2024\u201325)",
-    "subtitle": [
-      "Connecting Australia to 8 primary international trading hubs (representing A$46.9B in farm export value).",
-      "Line width denotes export value; line colour indicates region. Markers and labels are fully interactive with hover tooltips."
-    ],
-    "fontSize": 15,
-    "subtitleFontSize": 11.5,
-    "anchor": "start",
-    "color": "#1E4D3B",
-    "subtitleColor": "#5C6660",
-    "offset": 14
-  },
   "width": "container",
   "height": 520,
   "background": "transparent",
@@ -565,7 +552,7 @@
             "longitude": 133.5,
             "latitude": -25.5,
             "title": "AUSTRALIA (ORIGIN)",
-            "subtitle": ">70% Farm Output Exported",
+            "subtitle": "",
             "origin_name": "Australia (Centroid: 133.5\u00b0E, 25.5\u00b0S)",
             "export_share": ">70% of Total Farm Production",
             "total_exports": "A$75.8 Billion (2024\u201325)",

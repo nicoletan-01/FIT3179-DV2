@@ -18,7 +18,10 @@
     {
       "data": {
         "graticule": {
-          "step": [30, 30]
+          "step": [
+            30,
+            30
+          ]
         }
       },
       "mark": {
@@ -29,7 +32,7 @@
     },
     {
       "data": {
-        "url": "https://raw.githubusercontent.com/vega/vega-datasets/master/data/world-115m.json",
+        "url": "data/world_110m.json",
         "format": {
           "type": "topojson",
           "feature": "countries"
@@ -44,7 +47,7 @@
     },
     {
       "data": {
-        "url": "https://raw.githubusercontent.com/vega/vega-datasets/master/data/world-115m.json",
+        "url": "data/world_110m.json",
         "format": {
           "type": "topojson",
           "feature": "countries"
@@ -52,31 +55,14 @@
       },
       "transform": [
         {
-          "lookup": "id",
+          "calculate": "toNumber(datum.id)",
+          "as": "id_num"
+        },
+        {
+          "lookup": "id_num",
           "from": {
             "data": {
-              "values": [
-                {"id": 36, "Country": "Australia", "TFP_Index_2024": 164.2, "Annual_TFP_Growth_Pct": 1.52, "OECD_Producer_Support_Pct": 2.4},
-                {"id": 840, "Country": "United States", "TFP_Index_2024": 156.8, "Annual_TFP_Growth_Pct": 1.45, "OECD_Producer_Support_Pct": 12.2},
-                {"id": 76, "Country": "Brazil", "TFP_Index_2024": 182.4, "Annual_TFP_Growth_Pct": 2.85, "OECD_Producer_Support_Pct": 5.7},
-                {"id": 156, "Country": "China", "TFP_Index_2024": 215.1, "Annual_TFP_Growth_Pct": 3.42, "OECD_Producer_Support_Pct": 14.8},
-                {"id": 124, "Country": "Canada", "TFP_Index_2024": 159.4, "Annual_TFP_Growth_Pct": 1.38, "OECD_Producer_Support_Pct": 9.1},
-                {"id": 276, "Country": "Germany", "TFP_Index_2024": 142.0, "Annual_TFP_Growth_Pct": 1.15, "OECD_Producer_Support_Pct": 17.8},
-                {"id": 250, "Country": "France", "TFP_Index_2024": 144.5, "Annual_TFP_Growth_Pct": 1.22, "OECD_Producer_Support_Pct": 17.8},
-                {"id": 380, "Country": "Italy", "TFP_Index_2024": 136.2, "Annual_TFP_Growth_Pct": 0.98, "OECD_Producer_Support_Pct": 17.8},
-                {"id": 826, "Country": "United Kingdom", "TFP_Index_2024": 138.5, "Annual_TFP_Growth_Pct": 1.10, "OECD_Producer_Support_Pct": 15.2},
-                {"id": 392, "Country": "Japan", "TFP_Index_2024": 131.0, "Annual_TFP_Growth_Pct": 0.85, "OECD_Producer_Support_Pct": 37.6},
-                {"id": 410, "Country": "South Korea", "TFP_Index_2024": 128.4, "Annual_TFP_Growth_Pct": 0.92, "OECD_Producer_Support_Pct": 44.2},
-                {"id": 710, "Country": "South Africa", "TFP_Index_2024": 148.9, "Annual_TFP_Growth_Pct": 1.28, "OECD_Producer_Support_Pct": 3.1},
-                {"id": 356, "Country": "India", "TFP_Index_2024": 174.6, "Annual_TFP_Growth_Pct": 2.45, "OECD_Producer_Support_Pct": 11.5},
-                {"id": 554, "Country": "New Zealand", "TFP_Index_2024": 158.0, "Annual_TFP_Growth_Pct": 1.40, "OECD_Producer_Support_Pct": 0.8},
-                {"id": 32, "Country": "Argentina", "TFP_Index_2024": 168.2, "Annual_TFP_Growth_Pct": 2.10, "OECD_Producer_Support_Pct": 2.1},
-                {"id": 724, "Country": "Spain", "TFP_Index_2024": 139.8, "Annual_TFP_Growth_Pct": 1.05, "OECD_Producer_Support_Pct": 17.8},
-                {"id": 643, "Country": "Russia", "TFP_Index_2024": 178.5, "Annual_TFP_Growth_Pct": 2.30, "OECD_Producer_Support_Pct": 19.4},
-                {"id": 484, "Country": "Mexico", "TFP_Index_2024": 145.0, "Annual_TFP_Growth_Pct": 1.20, "OECD_Producer_Support_Pct": 12.0},
-                {"id": 360, "Country": "Indonesia", "TFP_Index_2024": 162.0, "Annual_TFP_Growth_Pct": 1.95, "OECD_Producer_Support_Pct": 6.5},
-                {"id": 528, "Country": "Netherlands", "TFP_Index_2024": 152.0, "Annual_TFP_Growth_Pct": 1.50, "OECD_Producer_Support_Pct": 17.8}
-              ]
+              "url": "data/usda_oecd_global_tfp.csv"
             },
             "key": "id",
             "fields": [
@@ -101,8 +87,11 @@
           "field": "TFP_Index_2024",
           "type": "quantitative",
           "scale": {
-            "scheme": "ylgn",
-            "domain": [115, 220]
+            "scheme": "viridis",
+            "domain": [
+              115,
+              220
+            ]
           },
           "legend": {
             "title": "TFP Index (1990=100)",
@@ -110,10 +99,29 @@
           }
         },
         "tooltip": [
-          {"field": "Country", "type": "nominal", "title": "Country"},
-          {"field": "TFP_Index_2024", "type": "quantitative", "title": "2024 TFP Index (1990=100)", "format": ".1f"},
-          {"field": "Annual_TFP_Growth_Pct", "type": "quantitative", "title": "Annual TFP Growth (%)", "format": ".2f"},
-          {"field": "OECD_Producer_Support_Pct", "type": "quantitative", "title": "OECD Producer Subsidy (% Receipts)", "format": ".1f"}
+          {
+            "field": "Country",
+            "type": "nominal",
+            "title": "Country"
+          },
+          {
+            "field": "TFP_Index_2024",
+            "type": "quantitative",
+            "title": "2024 TFP Index (1990=100)",
+            "format": ".1f"
+          },
+          {
+            "field": "Annual_TFP_Growth_Pct",
+            "type": "quantitative",
+            "title": "Annual TFP Growth (%)",
+            "format": ".2f"
+          },
+          {
+            "field": "OECD_Producer_Support_Pct",
+            "type": "quantitative",
+            "title": "OECD Producer Subsidy (% Receipts)",
+            "format": ".1f"
+          }
         ]
       }
     },
@@ -135,9 +143,18 @@
         "fill": "#C85A32"
       },
       "encoding": {
-        "longitude": {"field": "Lon", "type": "quantitative"},
-        "latitude": {"field": "Lat", "type": "quantitative"},
-        "text": {"field": "Label", "type": "nominal"}
+        "longitude": {
+          "field": "Lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "Lat",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "Label",
+          "type": "nominal"
+        }
       }
     }
   ],

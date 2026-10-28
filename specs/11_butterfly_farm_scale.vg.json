@@ -3,12 +3,28 @@
   "data": {
     "url": "data/abares_farm_scale_butterfly.csv"
   },
-  "spacing": 12,
+  "spacing": 4,
   "bounds": "flush",
   "hconcat": [
     {
-      "width": 250,
-      "height": 260,
+      "width": 240,
+      "height": 265,
+      "encoding": {
+        "y": {
+          "field": "Farm_Size_Class",
+          "type": "nominal",
+          "sort": {
+            "field": "Sort_Order",
+            "order": "ascending"
+          },
+          "axis": {
+            "title": null,
+            "labelFontWeight": 600,
+            "labelFontSize": 11,
+            "labelLimit": 180
+          }
+        }
+      },
       "layer": [
         {
           "mark": {
@@ -20,20 +36,6 @@
             }
           },
           "encoding": {
-            "y": {
-              "field": "Farm_Size_Class",
-              "type": "nominal",
-              "sort": {
-                "field": "Sort_Order",
-                "order": "ascending"
-              },
-              "axis": {
-                "title": null,
-                "labelFontWeight": 600,
-                "labelFontSize": 10.5,
-                "labelLimit": 160
-              }
-            },
             "x": {
               "field": "Cost_To_Output_Ratio_Pct",
               "type": "quantitative",
@@ -55,12 +57,18 @@
               {
                 "field": "Cost_To_Output_Ratio_Pct",
                 "type": "quantitative",
-                "title": "Cost-to-Output Ratio (%)"
+                "title": "Cost-to-Output Ratio (%)",
+                "format": ".1f"
               }
             ]
           }
         },
         {
+          "transform": [
+            {
+              "filter": "datum.Cost_To_Output_Ratio_Pct < 90"
+            }
+          ],
           "mark": {
             "type": "text",
             "align": "right",
@@ -70,14 +78,34 @@
             "fill": "#C85A32"
           },
           "encoding": {
-            "y": {
-              "field": "Farm_Size_Class",
-              "type": "nominal",
-              "sort": {
-                "field": "Sort_Order",
-                "order": "ascending"
-              }
+            "x": {
+              "field": "Cost_To_Output_Ratio_Pct",
+              "type": "quantitative",
+              "sort": "descending"
             },
+            "text": {
+              "field": "Cost_To_Output_Ratio_Pct",
+              "type": "quantitative",
+              "format": ".1f"
+            }
+          }
+        },
+        {
+          "transform": [
+            {
+              "filter": "datum.Cost_To_Output_Ratio_Pct >= 90"
+            }
+          ],
+          "mark": {
+            "type": "text",
+            "align": "right",
+            "dx": -4,
+            "dy": -13,
+            "fontSize": 10.5,
+            "fontWeight": "bold",
+            "fill": "#C85A32"
+          },
+          "encoding": {
             "x": {
               "field": "Cost_To_Output_Ratio_Pct",
               "type": "quantitative",
@@ -93,8 +121,19 @@
       ]
     },
     {
-      "width": 60,
-      "height": 260,
+      "width": 65,
+      "height": 265,
+      "encoding": {
+        "y": {
+          "field": "Farm_Size_Class",
+          "type": "nominal",
+          "sort": {
+            "field": "Sort_Order",
+            "order": "ascending"
+          },
+          "axis": null
+        }
+      },
       "layer": [
         {
           "mark": {
@@ -106,24 +145,15 @@
             }
           },
           "encoding": {
-            "y": {
-              "field": "Farm_Size_Class",
-              "type": "nominal",
-              "sort": {
-                "field": "Sort_Order",
-                "order": "ascending"
-              },
-              "axis": null
-            },
             "x": {
               "field": "Rate_Of_Return_Pct",
               "type": "quantitative",
               "scale": {
-                "domain": [0, 24]
+                "domain": [0, 20]
               },
               "axis": {
                 "title": "Rate of Return (%)",
-                "values": [0, 10, 20]
+                "tickCount": 2
               }
             },
             "tooltip": [
@@ -135,12 +165,14 @@
               {
                 "field": "Rate_Of_Return_Pct",
                 "type": "quantitative",
-                "title": "Rate of Return (%)"
+                "title": "Rate of Return (%)",
+                "format": ".1f"
               },
               {
                 "field": "TFP_Annual_Growth_Pct",
                 "type": "quantitative",
-                "title": "Annual TFP Growth (%)"
+                "title": "Annual TFP Growth (%)",
+                "format": ".2f"
               }
             ]
           }
@@ -149,20 +181,12 @@
           "mark": {
             "type": "text",
             "align": "left",
-            "dx": 6,
+            "dx": 5,
             "fontSize": 10.5,
             "fontWeight": "bold",
             "fill": "#1E4D3B"
           },
           "encoding": {
-            "y": {
-              "field": "Farm_Size_Class",
-              "type": "nominal",
-              "sort": {
-                "field": "Sort_Order",
-                "order": "ascending"
-              }
-            },
             "x": {
               "field": "Rate_Of_Return_Pct",
               "type": "quantitative"
@@ -186,12 +210,18 @@
     },
     "axis": {
       "labelFontSize": 11,
-      "titleFontSize": 11.5,
+      "titleFontSize": 12,
       "titleFontWeight": 600,
       "titleColor": "#232725",
       "labelColor": "#454D48",
       "gridColor": "#EAE3D2",
       "domainColor": "#C7BFA8"
+    },
+    "legend": {
+      "labelFontSize": 11,
+      "titleFontSize": 11.5,
+      "titleFontWeight": 600,
+      "titleColor": "#1E4D3B"
     },
     "view": {
       "stroke": "transparent"

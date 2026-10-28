@@ -186,12 +186,12 @@
         "values": [
           {
             "Lon": 120.0,
-            "Lat": -38.5,
+            "Lat": -30.5,
             "Note": "WA: Highest TFP growth (+1.92% p.a.)"
           },
           {
             "Lon": 151.5,
-            "Lat": -41.2,
+            "Lat": -35.0,
             "Note": "MDB: $45B+ output"
           }
         ]

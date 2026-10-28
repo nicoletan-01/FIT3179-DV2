@@ -1,12 +1,16 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "description": "Global Agricultural Export Corridors (2024–25). Reduced to 8 major national destinations with true continental proportions and responsive interactive tooltips.",
+  "description": "Pacific-Centred Global Agricultural Export Corridors (2024\u201325). Reduced to 8 major national destinations with zero label overlap and responsive interactive tooltips.",
   "width": "container",
   "height": 520,
   "background": "transparent",
   "projection": {
     "type": "equalEarth",
-    "rotate": [0, 0, 0]
+    "rotate": [
+      -150,
+      0,
+      0
+    ]
   },
   "params": [
     {
@@ -31,7 +35,10 @@
       "name": "ocean_graticule",
       "data": {
         "graticule": {
-          "step": [30, 30]
+          "step": [
+            30,
+            30
+          ]
         }
       },
       "mark": {
@@ -89,24 +96,7 @@
     {
       "name": "corridor_flow_lines",
       "data": {
-        "values": [
-          {"country": "China", "rank": 1, "value": 16716.0, "share": 22.0, "point": "Australia", "order": 1, "lon": 133.5, "lat": -25.5, "region": "East Asia", "rank_label": "#1 National Export Market", "value_full": "A$16,716 Million ($16.7B)", "share_pct": "22.0% of all farm exports", "key_commodities": "Beef, Wheat, Barley, Wool, Cotton", "trade_agreement": "ChAFTA (China-Australia FTA)"},
-          {"country": "China", "rank": 1, "value": 16716.0, "share": 22.0, "point": "Market", "order": 2, "lon": 104.2, "lat": 35.8, "region": "East Asia", "rank_label": "#1 National Export Market", "value_full": "A$16,716 Million ($16.7B)", "share_pct": "22.0% of all farm exports", "key_commodities": "Beef, Wheat, Barley, Wool, Cotton", "trade_agreement": "ChAFTA (China-Australia FTA)"},
-          {"country": "United States", "rank": 2, "value": 9132.0, "share": 12.0, "point": "Australia", "order": 1, "lon": 133.5, "lat": -25.5, "region": "North America", "rank_label": "#2 National Export Market", "value_full": "A$9,132 Million ($9.1B)", "share_pct": "12.0% of all farm exports", "key_commodities": "Beef, Wine, Lamb, Dairy, Canola", "trade_agreement": "AUSFTA (Australia-US FTA)"},
-          {"country": "United States", "rank": 2, "value": 9132.0, "share": 12.0, "point": "Market", "order": 2, "lon": -95.7, "lat": 37.1, "region": "North America", "rank_label": "#2 National Export Market", "value_full": "A$9,132 Million ($9.1B)", "share_pct": "12.0% of all farm exports", "key_commodities": "Beef, Wine, Lamb, Dairy, Canola", "trade_agreement": "AUSFTA (Australia-US FTA)"},
-          {"country": "Japan", "rank": 3, "value": 5198.0, "share": 6.9, "point": "Australia", "order": 1, "lon": 133.5, "lat": -25.5, "region": "East Asia", "rank_label": "#3 National Export Market", "value_full": "A$5,198 Million ($5.2B)", "share_pct": "6.9% of all farm exports", "key_commodities": "Beef, Wheat, Barley, Dairy, Sugar", "trade_agreement": "JAEPA & CPTPP"},
-          {"country": "Japan", "rank": 3, "value": 5198.0, "share": 6.9, "point": "Market", "order": 2, "lon": 138.3, "lat": 36.2, "region": "East Asia", "rank_label": "#3 National Export Market", "value_full": "A$5,198 Million ($5.2B)", "share_pct": "6.9% of all farm exports", "key_commodities": "Beef, Wheat, Barley, Dairy, Sugar", "trade_agreement": "JAEPA & CPTPP"},
-          {"country": "European Union", "rank": 4, "value": 4428.0, "share": 5.8, "point": "Australia", "order": 1, "lon": 133.5, "lat": -25.5, "region": "Europe & Middle East", "rank_label": "#4 National Export Market", "value_full": "A$4,428 Million ($4.4B)", "share_pct": "5.8% of all farm exports", "key_commodities": "Canola, Wine, Wool, Beef, Pulses", "trade_agreement": "WTO Most-Favoured-Nation"},
-          {"country": "European Union", "rank": 4, "value": 4428.0, "share": 5.8, "point": "Market", "order": 2, "lon": 10.4, "lat": 51.2, "region": "Europe & Middle East", "rank_label": "#4 National Export Market", "value_full": "A$4,428 Million ($4.4B)", "share_pct": "5.8% of all farm exports", "key_commodities": "Canola, Wine, Wool, Beef, Pulses", "trade_agreement": "WTO Most-Favoured-Nation"},
-          {"country": "Indonesia", "rank": 5, "value": 4052.0, "share": 5.3, "point": "Australia", "order": 1, "lon": 133.5, "lat": -25.5, "region": "Southeast Asia", "rank_label": "#5 National Export Market", "value_full": "A$4,052 Million ($4.1B)", "share_pct": "5.3% of all farm exports", "key_commodities": "Live Cattle, Wheat, Sugar, Cotton, Pulses", "trade_agreement": "IA-CEPA & AANZFTA"},
-          {"country": "Indonesia", "rank": 5, "value": 4052.0, "share": 5.3, "point": "Market", "order": 2, "lon": 113.9, "lat": -0.8, "region": "Southeast Asia", "rank_label": "#5 National Export Market", "value_full": "A$4,052 Million ($4.1B)", "share_pct": "5.3% of all farm exports", "key_commodities": "Live Cattle, Wheat, Sugar, Cotton, Pulses", "trade_agreement": "IA-CEPA & AANZFTA"},
-          {"country": "New Zealand", "rank": 6, "value": 2874.0, "share": 3.8, "point": "Australia", "order": 1, "lon": 133.5, "lat": -25.5, "region": "South Asia & Oceania", "rank_label": "#6 National Export Market", "value_full": "A$2,874 Million ($2.9B)", "share_pct": "3.8% of all farm exports", "key_commodities": "Wine, Sugar, Cereals, Fresh Produce", "trade_agreement": "ANZCERTA (Closer Economic Relations)"},
-          {"country": "New Zealand", "rank": 6, "value": 2874.0, "share": 3.8, "point": "Market", "order": 2, "lon": 174.9, "lat": -40.9, "region": "South Asia & Oceania", "rank_label": "#6 National Export Market", "value_full": "A$2,874 Million ($2.9B)", "share_pct": "3.8% of all farm exports", "key_commodities": "Wine, Sugar, Cereals, Fresh Produce", "trade_agreement": "ANZCERTA (Closer Economic Relations)"},
-          {"country": "India", "rank": 7, "value": 2592.0, "share": 3.4, "point": "Australia", "order": 1, "lon": 133.5, "lat": -25.5, "region": "South Asia & Oceania", "rank_label": "#7 National Export Market", "value_full": "A$2,592 Million ($2.6B)", "share_pct": "3.4% of all farm exports", "key_commodities": "Lentils, Chickpeas, Wool, Cotton, Almonds", "trade_agreement": "AI-ECTA (Economic Trade Agreement)"},
-          {"country": "India", "rank": 7, "value": 2592.0, "share": 3.4, "point": "Market", "order": 2, "lon": 79.0, "lat": 20.6, "region": "South Asia & Oceania", "rank_label": "#7 National Export Market", "value_full": "A$2,592 Million ($2.6B)", "share_pct": "3.4% of all farm exports", "key_commodities": "Lentils, Chickpeas, Wool, Cotton, Almonds", "trade_agreement": "AI-ECTA (Economic Trade Agreement)"},
-          {"country": "UAE", "rank": 8, "value": 1895.0, "share": 2.5, "point": "Australia", "order": 1, "lon": 133.5, "lat": -25.5, "region": "Europe & Middle East", "rank_label": "#8 National Export Market", "value_full": "A$1,895 Million ($1.9B)", "share_pct": "2.5% of all farm exports", "key_commodities": "Canola, Meat (Sheep & Goat), Wheat, Pulses", "trade_agreement": "Australia-UAE CEPA"},
-          {"country": "UAE", "rank": 8, "value": 1895.0, "share": 2.5, "point": "Market", "order": 2, "lon": 53.8, "lat": 23.4, "region": "Europe & Middle East", "rank_label": "#8 National Export Market", "value_full": "A$1,895 Million ($1.9B)", "share_pct": "2.5% of all farm exports", "key_commodities": "Canola, Meat (Sheep & Goat), Wheat, Pulses", "trade_agreement": "Australia-UAE CEPA"}
-        ]
+        "url": "data/flow_routes_productivity_2025.csv"
       },
       "transform": [
         {
@@ -139,8 +129,14 @@
           "field": "value",
           "type": "quantitative",
           "scale": {
-            "domain": [0, 17000],
-            "range": [2.0, 9.0]
+            "domain": [
+              0,
+              17000
+            ],
+            "range": [
+              2.0,
+              9.0
+            ]
           },
           "legend": null
         },
@@ -180,29 +176,48 @@
           "value": 0.78
         },
         "tooltip": [
-          {"field": "country", "type": "nominal", "title": "Export Market"},
-          {"field": "rank_label", "type": "nominal", "title": "Rank"},
-          {"field": "region", "type": "nominal", "title": "Trade Corridor"},
-          {"field": "value_full", "type": "nominal", "title": "2024–25 Exports"},
-          {"field": "share_pct", "type": "nominal", "title": "National Export Share"},
-          {"field": "key_commodities", "type": "nominal", "title": "Key Commodities"},
-          {"field": "trade_agreement", "type": "nominal", "title": "Governing Agreement"}
+          {
+            "field": "country",
+            "type": "nominal",
+            "title": "Export Market"
+          },
+          {
+            "field": "rank_label",
+            "type": "nominal",
+            "title": "Rank"
+          },
+          {
+            "field": "region",
+            "type": "nominal",
+            "title": "Trade Corridor"
+          },
+          {
+            "field": "value_full",
+            "type": "nominal",
+            "title": "2024\u201325 Exports"
+          },
+          {
+            "field": "share_pct",
+            "type": "nominal",
+            "title": "National Export Share"
+          },
+          {
+            "field": "key_commodities",
+            "type": "nominal",
+            "title": "Key Commodities"
+          },
+          {
+            "field": "trade_agreement",
+            "type": "nominal",
+            "title": "Governing Agreement"
+          }
         ]
       }
     },
     {
       "name": "destination_beacon_rings",
       "data": {
-        "values": [
-          {"rank": 1, "country": "China", "region": "East Asia", "value": 16716.0, "share": 22.0, "lon": 104.2, "lat": 35.8, "value_label": "$16.7B", "display_label": "China ($16.7B)", "align": "right", "dx": -14.0, "dy": -4.0, "rank_label": "#1 National Export Market", "value_full": "A$16,716 Million ($16.7B)", "share_pct": "22.0% of all farm exports", "key_commodities": "Beef, Wheat, Barley, Wool, Cotton", "trade_agreement": "ChAFTA (China-Australia FTA)"},
-          {"rank": 2, "country": "United States", "region": "North America", "value": 9132.0, "share": 12.0, "lon": -95.7, "lat": 37.1, "value_label": "$9.1B", "display_label": "United States ($9.1B)", "align": "left", "dx": 14.0, "dy": 0.0, "rank_label": "#2 National Export Market", "value_full": "A$9,132 Million ($9.1B)", "share_pct": "12.0% of all farm exports", "key_commodities": "Beef, Wine, Lamb, Dairy, Canola", "trade_agreement": "AUSFTA (Australia-US FTA)"},
-          {"rank": 3, "country": "Japan", "region": "East Asia", "value": 5198.0, "share": 6.9, "lon": 138.3, "lat": 36.2, "value_label": "$5.2B", "display_label": "Japan ($5.2B)", "align": "left", "dx": 14.0, "dy": -4.0, "rank_label": "#3 National Export Market", "value_full": "A$5,198 Million ($5.2B)", "share_pct": "6.9% of all farm exports", "key_commodities": "Beef, Wheat, Barley, Dairy, Sugar", "trade_agreement": "JAEPA & CPTPP"},
-          {"rank": 4, "country": "European Union", "region": "Europe & Middle East", "value": 4428.0, "share": 5.8, "lon": 10.4, "lat": 51.2, "value_label": "$4.4B", "display_label": "EU ($4.4B)", "align": "right", "dx": -14.0, "dy": -4.0, "rank_label": "#4 National Export Market", "value_full": "A$4,428 Million ($4.4B)", "share_pct": "5.8% of all farm exports", "key_commodities": "Canola, Wine, Wool, Beef, Pulses", "trade_agreement": "WTO Most-Favoured-Nation"},
-          {"rank": 5, "country": "Indonesia", "region": "Southeast Asia", "value": 4052.0, "share": 5.3, "lon": 113.9, "lat": -0.8, "value_label": "$4.1B", "display_label": "Indonesia ($4.1B)", "align": "right", "dx": -14.0, "dy": 6.0, "rank_label": "#5 National Export Market", "value_full": "A$4,052 Million ($4.1B)", "share_pct": "5.3% of all farm exports", "key_commodities": "Live Cattle, Wheat, Sugar, Cotton, Pulses", "trade_agreement": "IA-CEPA & AANZFTA"},
-          {"rank": 6, "country": "New Zealand", "region": "South Asia & Oceania", "value": 2874.0, "share": 3.8, "lon": 174.9, "lat": -40.9, "value_label": "$2.9B", "display_label": "New Zealand ($2.9B)", "align": "right", "dx": -14.0, "dy": 6.0, "rank_label": "#6 National Export Market", "value_full": "A$2,874 Million ($2.9B)", "share_pct": "3.8% of all farm exports", "key_commodities": "Wine, Sugar, Cereals, Fresh Produce", "trade_agreement": "ANZCERTA (Closer Economic Relations)"},
-          {"rank": 7, "country": "India", "region": "South Asia & Oceania", "value": 2592.0, "share": 3.4, "lon": 79.0, "lat": 20.6, "value_label": "$2.6B", "display_label": "India ($2.6B)", "align": "left", "dx": 14.0, "dy": 12.0, "rank_label": "#7 National Export Market", "value_full": "A$2,592 Million ($2.6B)", "share_pct": "3.4% of all farm exports", "key_commodities": "Lentils, Chickpeas, Wool, Cotton, Almonds", "trade_agreement": "AI-ECTA (Economic Trade Agreement)"},
-          {"rank": 8, "country": "UAE", "region": "Europe & Middle East", "value": 1895.0, "share": 2.5, "lon": 53.8, "lat": 23.4, "value_label": "$1.9B", "display_label": "UAE ($1.9B)", "align": "right", "dx": -14.0, "dy": -6.0, "rank_label": "#8 National Export Market", "value_full": "A$1,895 Million ($1.9B)", "share_pct": "2.5% of all farm exports", "key_commodities": "Canola, Meat (Sheep & Goat), Wheat, Pulses", "trade_agreement": "Australia-UAE CEPA"}
-        ]
+        "url": "data/flows_productivity_2025.csv"
       },
       "transform": [
         {
@@ -252,16 +267,7 @@
     {
       "name": "destination_hover_targets",
       "data": {
-        "values": [
-          {"rank": 1, "country": "China", "region": "East Asia", "value": 16716.0, "share": 22.0, "lon": 104.2, "lat": 35.8, "value_label": "$16.7B", "display_label": "China ($16.7B)", "align": "right", "dx": -14.0, "dy": -4.0, "rank_label": "#1 National Export Market", "value_full": "A$16,716 Million ($16.7B)", "share_pct": "22.0% of all farm exports", "key_commodities": "Beef, Wheat, Barley, Wool, Cotton", "trade_agreement": "ChAFTA (China-Australia FTA)"},
-          {"rank": 2, "country": "United States", "region": "North America", "value": 9132.0, "share": 12.0, "lon": -95.7, "lat": 37.1, "value_label": "$9.1B", "display_label": "United States ($9.1B)", "align": "left", "dx": 14.0, "dy": 0.0, "rank_label": "#2 National Export Market", "value_full": "A$9,132 Million ($9.1B)", "share_pct": "12.0% of all farm exports", "key_commodities": "Beef, Wine, Lamb, Dairy, Canola", "trade_agreement": "AUSFTA (Australia-US FTA)"},
-          {"rank": 3, "country": "Japan", "region": "East Asia", "value": 5198.0, "share": 6.9, "lon": 138.3, "lat": 36.2, "value_label": "$5.2B", "display_label": "Japan ($5.2B)", "align": "left", "dx": 14.0, "dy": -4.0, "rank_label": "#3 National Export Market", "value_full": "A$5,198 Million ($5.2B)", "share_pct": "6.9% of all farm exports", "key_commodities": "Beef, Wheat, Barley, Dairy, Sugar", "trade_agreement": "JAEPA & CPTPP"},
-          {"rank": 4, "country": "European Union", "region": "Europe & Middle East", "value": 4428.0, "share": 5.8, "lon": 10.4, "lat": 51.2, "value_label": "$4.4B", "display_label": "EU ($4.4B)", "align": "right", "dx": -14.0, "dy": -4.0, "rank_label": "#4 National Export Market", "value_full": "A$4,428 Million ($4.4B)", "share_pct": "5.8% of all farm exports", "key_commodities": "Canola, Wine, Wool, Beef, Pulses", "trade_agreement": "WTO Most-Favoured-Nation"},
-          {"rank": 5, "country": "Indonesia", "region": "Southeast Asia", "value": 4052.0, "share": 5.3, "lon": 113.9, "lat": -0.8, "value_label": "$4.1B", "display_label": "Indonesia ($4.1B)", "align": "right", "dx": -14.0, "dy": 6.0, "rank_label": "#5 National Export Market", "value_full": "A$4,052 Million ($4.1B)", "share_pct": "5.3% of all farm exports", "key_commodities": "Live Cattle, Wheat, Sugar, Cotton, Pulses", "trade_agreement": "IA-CEPA & AANZFTA"},
-          {"rank": 6, "country": "New Zealand", "region": "South Asia & Oceania", "value": 2874.0, "share": 3.8, "lon": 174.9, "lat": -40.9, "value_label": "$2.9B", "display_label": "New Zealand ($2.9B)", "align": "right", "dx": -14.0, "dy": 6.0, "rank_label": "#6 National Export Market", "value_full": "A$2,874 Million ($2.9B)", "share_pct": "3.8% of all farm exports", "key_commodities": "Wine, Sugar, Cereals, Fresh Produce", "trade_agreement": "ANZCERTA (Closer Economic Relations)"},
-          {"rank": 7, "country": "India", "region": "South Asia & Oceania", "value": 2592.0, "share": 3.4, "lon": 79.0, "lat": 20.6, "value_label": "$2.6B", "display_label": "India ($2.6B)", "align": "left", "dx": 14.0, "dy": 12.0, "rank_label": "#7 National Export Market", "value_full": "A$2,592 Million ($2.6B)", "share_pct": "3.4% of all farm exports", "key_commodities": "Lentils, Chickpeas, Wool, Cotton, Almonds", "trade_agreement": "AI-ECTA (Economic Trade Agreement)"},
-          {"rank": 8, "country": "UAE", "region": "Europe & Middle East", "value": 1895.0, "share": 2.5, "lon": 53.8, "lat": 23.4, "value_label": "$1.9B", "display_label": "UAE ($1.9B)", "align": "right", "dx": -14.0, "dy": -6.0, "rank_label": "#8 National Export Market", "value_full": "A$1,895 Million ($1.9B)", "share_pct": "2.5% of all farm exports", "key_commodities": "Canola, Meat (Sheep & Goat), Wheat, Pulses", "trade_agreement": "Australia-UAE CEPA"}
-        ]
+        "url": "data/flows_productivity_2025.csv"
       },
       "transform": [
         {
@@ -285,29 +291,48 @@
           "type": "quantitative"
         },
         "tooltip": [
-          {"field": "country", "type": "nominal", "title": "Export Market"},
-          {"field": "rank_label", "type": "nominal", "title": "Rank"},
-          {"field": "region", "type": "nominal", "title": "Trade Corridor"},
-          {"field": "value_full", "type": "nominal", "title": "2024–25 Exports"},
-          {"field": "share_pct", "type": "nominal", "title": "National Export Share"},
-          {"field": "key_commodities", "type": "nominal", "title": "Key Commodities"},
-          {"field": "trade_agreement", "type": "nominal", "title": "Governing Agreement"}
+          {
+            "field": "country",
+            "type": "nominal",
+            "title": "Export Market"
+          },
+          {
+            "field": "rank_label",
+            "type": "nominal",
+            "title": "Rank"
+          },
+          {
+            "field": "region",
+            "type": "nominal",
+            "title": "Trade Corridor"
+          },
+          {
+            "field": "value_full",
+            "type": "nominal",
+            "title": "2024\u201325 Exports"
+          },
+          {
+            "field": "share_pct",
+            "type": "nominal",
+            "title": "National Export Share"
+          },
+          {
+            "field": "key_commodities",
+            "type": "nominal",
+            "title": "Key Commodities"
+          },
+          {
+            "field": "trade_agreement",
+            "type": "nominal",
+            "title": "Governing Agreement"
+          }
         ]
       }
     },
     {
       "name": "destination_solid_pins",
       "data": {
-        "values": [
-          {"rank": 1, "country": "China", "region": "East Asia", "value": 16716.0, "share": 22.0, "lon": 104.2, "lat": 35.8, "value_label": "$16.7B", "display_label": "China ($16.7B)", "align": "right", "dx": -14.0, "dy": -4.0, "rank_label": "#1 National Export Market", "value_full": "A$16,716 Million ($16.7B)", "share_pct": "22.0% of all farm exports", "key_commodities": "Beef, Wheat, Barley, Wool, Cotton", "trade_agreement": "ChAFTA (China-Australia FTA)"},
-          {"rank": 2, "country": "United States", "region": "North America", "value": 9132.0, "share": 12.0, "lon": -95.7, "lat": 37.1, "value_label": "$9.1B", "display_label": "United States ($9.1B)", "align": "left", "dx": 14.0, "dy": 0.0, "rank_label": "#2 National Export Market", "value_full": "A$9,132 Million ($9.1B)", "share_pct": "12.0% of all farm exports", "key_commodities": "Beef, Wine, Lamb, Dairy, Canola", "trade_agreement": "AUSFTA (Australia-US FTA)"},
-          {"rank": 3, "country": "Japan", "region": "East Asia", "value": 5198.0, "share": 6.9, "lon": 138.3, "lat": 36.2, "value_label": "$5.2B", "display_label": "Japan ($5.2B)", "align": "left", "dx": 14.0, "dy": -4.0, "rank_label": "#3 National Export Market", "value_full": "A$5,198 Million ($5.2B)", "share_pct": "6.9% of all farm exports", "key_commodities": "Beef, Wheat, Barley, Dairy, Sugar", "trade_agreement": "JAEPA & CPTPP"},
-          {"rank": 4, "country": "European Union", "region": "Europe & Middle East", "value": 4428.0, "share": 5.8, "lon": 10.4, "lat": 51.2, "value_label": "$4.4B", "display_label": "EU ($4.4B)", "align": "right", "dx": -14.0, "dy": -4.0, "rank_label": "#4 National Export Market", "value_full": "A$4,428 Million ($4.4B)", "share_pct": "5.8% of all farm exports", "key_commodities": "Canola, Wine, Wool, Beef, Pulses", "trade_agreement": "WTO Most-Favoured-Nation"},
-          {"rank": 5, "country": "Indonesia", "region": "Southeast Asia", "value": 4052.0, "share": 5.3, "lon": 113.9, "lat": -0.8, "value_label": "$4.1B", "display_label": "Indonesia ($4.1B)", "align": "right", "dx": -14.0, "dy": 6.0, "rank_label": "#5 National Export Market", "value_full": "A$4,052 Million ($4.1B)", "share_pct": "5.3% of all farm exports", "key_commodities": "Live Cattle, Wheat, Sugar, Cotton, Pulses", "trade_agreement": "IA-CEPA & AANZFTA"},
-          {"rank": 6, "country": "New Zealand", "region": "South Asia & Oceania", "value": 2874.0, "share": 3.8, "lon": 174.9, "lat": -40.9, "value_label": "$2.9B", "display_label": "New Zealand ($2.9B)", "align": "right", "dx": -14.0, "dy": 6.0, "rank_label": "#6 National Export Market", "value_full": "A$2,874 Million ($2.9B)", "share_pct": "3.8% of all farm exports", "key_commodities": "Wine, Sugar, Cereals, Fresh Produce", "trade_agreement": "ANZCERTA (Closer Economic Relations)"},
-          {"rank": 7, "country": "India", "region": "South Asia & Oceania", "value": 2592.0, "share": 3.4, "lon": 79.0, "lat": 20.6, "value_label": "$2.6B", "display_label": "India ($2.6B)", "align": "left", "dx": 14.0, "dy": 12.0, "rank_label": "#7 National Export Market", "value_full": "A$2,592 Million ($2.6B)", "share_pct": "3.4% of all farm exports", "key_commodities": "Lentils, Chickpeas, Wool, Cotton, Almonds", "trade_agreement": "AI-ECTA (Economic Trade Agreement)"},
-          {"rank": 8, "country": "UAE", "region": "Europe & Middle East", "value": 1895.0, "share": 2.5, "lon": 53.8, "lat": 23.4, "value_label": "$1.9B", "display_label": "UAE ($1.9B)", "align": "right", "dx": -14.0, "dy": -6.0, "rank_label": "#8 National Export Market", "value_full": "A$1,895 Million ($1.9B)", "share_pct": "2.5% of all farm exports", "key_commodities": "Canola, Meat (Sheep & Goat), Wheat, Pulses", "trade_agreement": "Australia-UAE CEPA"}
-        ]
+        "url": "data/flows_productivity_2025.csv"
       },
       "transform": [
         {
@@ -353,29 +378,48 @@
           "legend": null
         },
         "tooltip": [
-          {"field": "country", "type": "nominal", "title": "Export Market"},
-          {"field": "rank_label", "type": "nominal", "title": "Rank"},
-          {"field": "region", "type": "nominal", "title": "Trade Corridor"},
-          {"field": "value_full", "type": "nominal", "title": "2024–25 Exports"},
-          {"field": "share_pct", "type": "nominal", "title": "National Export Share"},
-          {"field": "key_commodities", "type": "nominal", "title": "Key Commodities"},
-          {"field": "trade_agreement", "type": "nominal", "title": "Governing Agreement"}
+          {
+            "field": "country",
+            "type": "nominal",
+            "title": "Export Market"
+          },
+          {
+            "field": "rank_label",
+            "type": "nominal",
+            "title": "Rank"
+          },
+          {
+            "field": "region",
+            "type": "nominal",
+            "title": "Trade Corridor"
+          },
+          {
+            "field": "value_full",
+            "type": "nominal",
+            "title": "2024\u201325 Exports"
+          },
+          {
+            "field": "share_pct",
+            "type": "nominal",
+            "title": "National Export Share"
+          },
+          {
+            "field": "key_commodities",
+            "type": "nominal",
+            "title": "Key Commodities"
+          },
+          {
+            "field": "trade_agreement",
+            "type": "nominal",
+            "title": "Governing Agreement"
+          }
         ]
       }
     },
     {
       "name": "destination_labels_halo",
       "data": {
-        "values": [
-          {"rank": 1, "country": "China", "region": "East Asia", "value": 16716.0, "share": 22.0, "lon": 104.2, "lat": 35.8, "value_label": "$16.7B", "display_label": "China ($16.7B)", "align": "right", "dx": -14.0, "dy": -4.0},
-          {"rank": 2, "country": "United States", "region": "North America", "value": 9132.0, "share": 12.0, "lon": -95.7, "lat": 37.1, "value_label": "$9.1B", "display_label": "United States ($9.1B)", "align": "left", "dx": 14.0, "dy": 0.0},
-          {"rank": 3, "country": "Japan", "region": "East Asia", "value": 5198.0, "share": 6.9, "lon": 138.3, "lat": 36.2, "value_label": "$5.2B", "display_label": "Japan ($5.2B)", "align": "left", "dx": 14.0, "dy": -4.0},
-          {"rank": 4, "country": "European Union", "region": "Europe & Middle East", "value": 4428.0, "share": 5.8, "lon": 10.4, "lat": 51.2, "value_label": "$4.4B", "display_label": "EU ($4.4B)", "align": "right", "dx": -14.0, "dy": -4.0},
-          {"rank": 5, "country": "Indonesia", "region": "Southeast Asia", "value": 4052.0, "share": 5.3, "lon": 113.9, "lat": -0.8, "value_label": "$4.1B", "display_label": "Indonesia ($4.1B)", "align": "right", "dx": -14.0, "dy": 6.0},
-          {"rank": 6, "country": "New Zealand", "region": "South Asia & Oceania", "value": 2874.0, "share": 3.8, "lon": 174.9, "lat": -40.9, "value_label": "$2.9B", "display_label": "New Zealand ($2.9B)", "align": "right", "dx": -14.0, "dy": 6.0},
-          {"rank": 7, "country": "India", "region": "South Asia & Oceania", "value": 2592.0, "share": 3.4, "lon": 79.0, "lat": 20.6, "value_label": "$2.6B", "display_label": "India ($2.6B)", "align": "left", "dx": 14.0, "dy": 12.0},
-          {"rank": 8, "country": "UAE", "region": "Europe & Middle East", "value": 1895.0, "share": 2.5, "lon": 53.8, "lat": 23.4, "value_label": "$1.9B", "display_label": "UAE ($1.9B)", "align": "right", "dx": -14.0, "dy": -6.0}
-        ]
+        "url": "data/flows_productivity_2025.csv"
       },
       "transform": [
         {
@@ -422,16 +466,7 @@
     {
       "name": "destination_labels_core",
       "data": {
-        "values": [
-          {"rank": 1, "country": "China", "region": "East Asia", "value": 16716.0, "share": 22.0, "lon": 104.2, "lat": 35.8, "value_label": "$16.7B", "display_label": "China ($16.7B)", "align": "right", "dx": -14.0, "dy": -4.0, "rank_label": "#1 National Export Market", "value_full": "A$16,716 Million ($16.7B)", "share_pct": "22.0% of all farm exports", "key_commodities": "Beef, Wheat, Barley, Wool, Cotton", "trade_agreement": "ChAFTA (China-Australia FTA)"},
-          {"rank": 2, "country": "United States", "region": "North America", "value": 9132.0, "share": 12.0, "lon": -95.7, "lat": 37.1, "value_label": "$9.1B", "display_label": "United States ($9.1B)", "align": "left", "dx": 14.0, "dy": 0.0, "rank_label": "#2 National Export Market", "value_full": "A$9,132 Million ($9.1B)", "share_pct": "12.0% of all farm exports", "key_commodities": "Beef, Wine, Lamb, Dairy, Canola", "trade_agreement": "AUSFTA (Australia-US FTA)"},
-          {"rank": 3, "country": "Japan", "region": "East Asia", "value": 5198.0, "share": 6.9, "lon": 138.3, "lat": 36.2, "value_label": "$5.2B", "display_label": "Japan ($5.2B)", "align": "left", "dx": 14.0, "dy": -4.0, "rank_label": "#3 National Export Market", "value_full": "A$5,198 Million ($5.2B)", "share_pct": "6.9% of all farm exports", "key_commodities": "Beef, Wheat, Barley, Dairy, Sugar", "trade_agreement": "JAEPA & CPTPP"},
-          {"rank": 4, "country": "European Union", "region": "Europe & Middle East", "value": 4428.0, "share": 5.8, "lon": 10.4, "lat": 51.2, "value_label": "$4.4B", "display_label": "EU ($4.4B)", "align": "right", "dx": -14.0, "dy": -4.0, "rank_label": "#4 National Export Market", "value_full": "A$4,428 Million ($4.4B)", "share_pct": "5.8% of all farm exports", "key_commodities": "Canola, Wine, Wool, Beef, Pulses", "trade_agreement": "WTO Most-Favoured-Nation"},
-          {"rank": 5, "country": "Indonesia", "region": "Southeast Asia", "value": 4052.0, "share": 5.3, "lon": 113.9, "lat": -0.8, "value_label": "$4.1B", "display_label": "Indonesia ($4.1B)", "align": "right", "dx": -14.0, "dy": 6.0, "rank_label": "#5 National Export Market", "value_full": "A$4,052 Million ($4.1B)", "share_pct": "5.3% of all farm exports", "key_commodities": "Live Cattle, Wheat, Sugar, Cotton, Pulses", "trade_agreement": "IA-CEPA & AANZFTA"},
-          {"rank": 6, "country": "New Zealand", "region": "South Asia & Oceania", "value": 2874.0, "share": 3.8, "lon": 174.9, "lat": -40.9, "value_label": "$2.9B", "display_label": "New Zealand ($2.9B)", "align": "right", "dx": -14.0, "dy": 6.0, "rank_label": "#6 National Export Market", "value_full": "A$2,874 Million ($2.9B)", "share_pct": "3.8% of all farm exports", "key_commodities": "Wine, Sugar, Cereals, Fresh Produce", "trade_agreement": "ANZCERTA (Closer Economic Relations)"},
-          {"rank": 7, "country": "India", "region": "South Asia & Oceania", "value": 2592.0, "share": 3.4, "lon": 79.0, "lat": 20.6, "value_label": "$2.6B", "display_label": "India ($2.6B)", "align": "left", "dx": 14.0, "dy": 12.0, "rank_label": "#7 National Export Market", "value_full": "A$2,592 Million ($2.6B)", "share_pct": "3.4% of all farm exports", "key_commodities": "Lentils, Chickpeas, Wool, Cotton, Almonds", "trade_agreement": "AI-ECTA (Economic Trade Agreement)"},
-          {"rank": 8, "country": "UAE", "region": "Europe & Middle East", "value": 1895.0, "share": 2.5, "lon": 53.8, "lat": 23.4, "value_label": "$1.9B", "display_label": "UAE ($1.9B)", "align": "right", "dx": -14.0, "dy": -6.0, "rank_label": "#8 National Export Market", "value_full": "A$1,895 Million ($1.9B)", "share_pct": "2.5% of all farm exports", "key_commodities": "Canola, Meat (Sheep & Goat), Wheat, Pulses", "trade_agreement": "Australia-UAE CEPA"}
-        ]
+        "url": "data/flows_productivity_2025.csv"
       },
       "transform": [
         {
@@ -471,13 +506,41 @@
           "type": "quantitative"
         },
         "tooltip": [
-          {"field": "country", "type": "nominal", "title": "Export Market"},
-          {"field": "rank_label", "type": "nominal", "title": "Rank"},
-          {"field": "region", "type": "nominal", "title": "Trade Corridor"},
-          {"field": "value_full", "type": "nominal", "title": "2024–25 Exports"},
-          {"field": "share_pct", "type": "nominal", "title": "National Export Share"},
-          {"field": "key_commodities", "type": "nominal", "title": "Key Commodities"},
-          {"field": "trade_agreement", "type": "nominal", "title": "Governing Agreement"}
+          {
+            "field": "country",
+            "type": "nominal",
+            "title": "Export Market"
+          },
+          {
+            "field": "rank_label",
+            "type": "nominal",
+            "title": "Rank"
+          },
+          {
+            "field": "region",
+            "type": "nominal",
+            "title": "Trade Corridor"
+          },
+          {
+            "field": "value_full",
+            "type": "nominal",
+            "title": "2024\u201325 Exports"
+          },
+          {
+            "field": "share_pct",
+            "type": "nominal",
+            "title": "National Export Share"
+          },
+          {
+            "field": "key_commodities",
+            "type": "nominal",
+            "title": "Key Commodities"
+          },
+          {
+            "field": "trade_agreement",
+            "type": "nominal",
+            "title": "Governing Agreement"
+          }
         ]
       }
     },
@@ -489,10 +552,10 @@
             "longitude": 133.5,
             "latitude": -25.5,
             "title": "AUSTRALIA (ORIGIN)",
-            "subtitle": ">70% Farm Output Exported",
-            "origin_name": "Australia (Centroid: 133.5°E, 25.5°S)",
+            "subtitle": "",
+            "origin_name": "Australia (Centroid: 133.5\u00b0E, 25.5\u00b0S)",
             "export_share": ">70% of Total Farm Production",
-            "total_exports": "A$75.8 Billion (2024–25)",
+            "total_exports": "A$75.8 Billion (2024\u201325)",
             "subsidy": "2.4% PSE (OECD 2nd-lowest)",
             "productivity": "+1.52% p.a. Long-Term TFP Growth"
           }
@@ -531,11 +594,31 @@
           },
           "encoding": {
             "tooltip": [
-              {"field": "origin_name", "type": "nominal", "title": "Export Origin"},
-              {"field": "export_share", "type": "nominal", "title": "Domestic Output Exported"},
-              {"field": "total_exports", "type": "nominal", "title": "Total Ag Exports"},
-              {"field": "subsidy", "type": "nominal", "title": "OECD Farm Support (PSE)"},
-              {"field": "productivity", "type": "nominal", "title": "Efficiency Driver"}
+              {
+                "field": "origin_name",
+                "type": "nominal",
+                "title": "Export Origin"
+              },
+              {
+                "field": "export_share",
+                "type": "nominal",
+                "title": "Domestic Output Exported"
+              },
+              {
+                "field": "total_exports",
+                "type": "nominal",
+                "title": "Total Ag Exports"
+              },
+              {
+                "field": "subsidy",
+                "type": "nominal",
+                "title": "OECD Farm Support (PSE)"
+              },
+              {
+                "field": "productivity",
+                "type": "nominal",
+                "title": "Efficiency Driver"
+              }
             ]
           }
         },
@@ -544,7 +627,7 @@
             "type": "text",
             "align": "center",
             "dy": -14,
-            "fontSize": 10.5,
+            "fontSize": 11,
             "fontWeight": 800,
             "stroke": "#FFFFFF",
             "strokeWidth": 3.0,
@@ -565,7 +648,7 @@
             "type": "text",
             "align": "center",
             "dy": -14,
-            "fontSize": 10.5,
+            "fontSize": 11,
             "fontWeight": 800,
             "fill": "#1E4D3B",
             "letterSpacing": 0.8,
@@ -577,11 +660,31 @@
               "type": "nominal"
             },
             "tooltip": [
-              {"field": "origin_name", "type": "nominal", "title": "Export Origin"},
-              {"field": "export_share", "type": "nominal", "title": "Domestic Output Exported"},
-              {"field": "total_exports", "type": "nominal", "title": "Total Ag Exports"},
-              {"field": "subsidy", "type": "nominal", "title": "OECD Farm Support (PSE)"},
-              {"field": "productivity", "type": "nominal", "title": "Efficiency Driver"}
+              {
+                "field": "origin_name",
+                "type": "nominal",
+                "title": "Export Origin"
+              },
+              {
+                "field": "export_share",
+                "type": "nominal",
+                "title": "Domestic Output Exported"
+              },
+              {
+                "field": "total_exports",
+                "type": "nominal",
+                "title": "Total Ag Exports"
+              },
+              {
+                "field": "subsidy",
+                "type": "nominal",
+                "title": "OECD Farm Support (PSE)"
+              },
+              {
+                "field": "productivity",
+                "type": "nominal",
+                "title": "Efficiency Driver"
+              }
             ]
           }
         },
@@ -621,11 +724,31 @@
               "type": "nominal"
             },
             "tooltip": [
-              {"field": "origin_name", "type": "nominal", "title": "Export Origin"},
-              {"field": "export_share", "type": "nominal", "title": "Domestic Output Exported"},
-              {"field": "total_exports", "type": "nominal", "title": "Total Ag Exports"},
-              {"field": "subsidy", "type": "nominal", "title": "OECD Farm Support (PSE)"},
-              {"field": "productivity", "type": "nominal", "title": "Efficiency Driver"}
+              {
+                "field": "origin_name",
+                "type": "nominal",
+                "title": "Export Origin"
+              },
+              {
+                "field": "export_share",
+                "type": "nominal",
+                "title": "Domestic Output Exported"
+              },
+              {
+                "field": "total_exports",
+                "type": "nominal",
+                "title": "Total Ag Exports"
+              },
+              {
+                "field": "subsidy",
+                "type": "nominal",
+                "title": "OECD Farm Support (PSE)"
+              },
+              {
+                "field": "productivity",
+                "type": "nominal",
+                "title": "Efficiency Driver"
+              }
             ]
           }
         }

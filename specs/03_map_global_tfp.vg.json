@@ -55,7 +55,11 @@
       },
       "transform": [
         {
-          "lookup": "id",
+          "calculate": "toNumber(datum.id)",
+          "as": "id_num"
+        },
+        {
+          "lookup": "id_num",
           "from": {
             "data": {
               "url": "data/usda_oecd_global_tfp.csv"
